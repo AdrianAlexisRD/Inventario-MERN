@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.bg-li{ @apply bg-[#121212] }
+
+.style-li-home{ @apply flex text-fuchsia-500 md:text-[38px] gap-4 text-[15px] }
+
+.style-input{ @apply w-full p-2 border-2 rounded mt-1 focus:bg-white focus:text-black  border-fuchsia-500 }
+
+.style-btn{ @apply bg-fuchsia-500 text-white px-4 py-2 rounded hover:bg-purple-600 active:scale-90 }
+
+.style-form{ @apply shadow-xl/50  p-4 dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white rounded }
+
+.btn-barra{ @apply flex gap-2 items-center rounded p-1 text-fuchsia-500 hover:bg-[#121212] dark:hover:bg-white hover:text-purple-500 active:scale-[0.95]}
+
+.style-barra{ @apply  rounded border-fuchsia-400 border-2 }
+
+.barra{ @apply h-fit mt-[100px] flex flex-col gap-4 pt-4 absolute left-2 top-[25vh] transition-all duration-300 ease-in-out}
+
+.card-line{ @apply flex gap-3 border-b-1 border-white w-[90%] p-1.5 }
+
+.btn-br-horizontal{@apply text-shadow-lg/30 rounded p-1 hover:bg-purple-500 active:bg-fuchsia-500 active:scale-[0.90]}
+
+.border-color{@apply bg-gradient-to-r from-fuchsia-500 to-purple-800}
+
+.Modo-Dark{ @apply dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white}
+
+.icon-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3 }
+*{
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.gradient-text-shadow:hover{
+  color: white; 
+  text-shadow: 0 0 15px #ed6bff, 0 0 15px white, 0 0 25px #2f0335  
+}
+
+.animacion {
+  animation: desaparece 1s ease-in-out forwards;
+}
+
+@keyframes desaparece {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

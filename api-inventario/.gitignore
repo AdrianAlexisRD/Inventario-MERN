@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+.env
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Vite / React / Next build
+dist/
+build/
+.vite/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor (VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+
+# Dependencias de producción
+*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# MongoDB (si generas dumps)
+dump/

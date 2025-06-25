@@ -1,0 +1,26 @@
+import { useEffect, useState } from "react";
+import { IconSun, IconMoon } from "@tabler/icons-react";
+
+export default function ModoDark() {
+  const [activo, setActivo] = useState(false);
+
+  useEffect(() => {
+    const isDark =
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setActivo(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", activo);
+    localStorage.theme = activo ? "dark" : "light";
+  }, [activo]);
+
+  return (
+    <div onClick={() => setActivo(!activo)} className="cursor-pointer  bg-clip-text text-fuchsia-500 font-bold">
+      {activo ? <IconSun stroke={2} size={30}  className="transition-all duration-1000 ease-in-out animacion"/> : <IconMoon stroke={2} size={30} className="transition-all duration-1000 ease-in-out"/>}
+    </div>
+  );
+}
