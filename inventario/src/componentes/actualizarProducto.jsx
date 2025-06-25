@@ -55,9 +55,9 @@ const handleChange = (e) => {
 
 
   return(
-    <div className="flex justify-center flex-col md:flex-row ">
+    <div className="flex justify-center flex-col md:flex-row items-center md:items-start">
 
-      <div className='border-color w-[70%]  rounded md:w-[400px] p-1 mt-15 h-fit'>
+      <div className='border-color w-[90%]  rounded md:w-[400px] p-1 mt-15 h-fit '>
         <form  className="style-form  relative md:h-fit " onSubmit={handleSubmit}>
           <h2 className="text-xl font-bold mb-6 text-purple-500">Actualizar Articulo</h2>
           <h2 className='text-green-600 absolute z-20 top-11 '>{exito}</h2>

@@ -47,3 +47,39 @@
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+
+
+/* En App.css */
+.route-container {
+  position: relative;
+}
+
+.route-container > * {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+/* Animación de entrada */
+.route-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.route-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animación de salida */
+.route-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.route-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+}

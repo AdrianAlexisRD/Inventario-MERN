@@ -24,7 +24,7 @@ const Barra =({actualizar: modificar})=>{
         </button>
 
           <button onClick={()=> setMostrarCont("main")}
-              className={`${modificar=='actualizar'? 'btn-barra':'btn-barra md:mt-12' }`}>
+              className={`${modificar ==='actualizar'? 'btn-barra':'btn-barra md:mt-12' }`}>
                       
               <IconStack3 stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible  " />
               <p className='overflow-hidden hidden md:flex'>inventario</p>
@@ -34,7 +34,7 @@ const Barra =({actualizar: modificar})=>{
           onClick={()=> setMostrarCont("crear")} 
           className="btn-barra"
           > <IconSelect stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden hidden md:flex'>Crear</p>
+            <p className='overflow-hidden hidden md:flex active:flex'>Crear</p>
           </button>
 
           <button 
