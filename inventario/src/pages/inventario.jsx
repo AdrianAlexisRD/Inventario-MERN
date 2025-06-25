@@ -13,8 +13,6 @@ const ListarArticulos = () => {
   const {mostrarCont} = useContext(MostrarContext)
   const {userON} = useContext(Autetificacion)
   
-
-
 const Componente = () => {
   switch (mostrarCont) {
     case "main":
@@ -26,8 +24,6 @@ const Componente = () => {
     default:
       return <Mostrar/>;
   }
-
- 
 };
 
 if(!userON) return <Login/>;
@@ -35,14 +31,8 @@ if(!userON) return <Login/>;
     return(
       <div className='flex flex-col items-center dark:bg-[#3f384c] bg-white h-[100vh] min-h-fit w-[100vw]'>
           <Header />
-         
-
-              <Barra modificar={mostrarCont} />
-
-               {Componente()}
-
-            
-                 
+          <Barra modificar={mostrarCont} />
+          {Componente()}        
       </div>
     )
 }

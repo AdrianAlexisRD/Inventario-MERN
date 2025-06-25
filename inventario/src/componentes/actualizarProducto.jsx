@@ -55,9 +55,9 @@ const handleChange = (e) => {
 
 
   return(
-    <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start sm:ml-[50px] sm:w-[100%] ">
+    <div className="flex justify-center flex-col md:flex-row ">
 
-      <div className='border-color w-[70%] rounded sm:w-[400px] p-2 md:mr-6 mt-15'>
+      <div className='border-color w-[70%]  rounded md:w-[400px] p-1 mt-15 h-fit'>
         <form  className="style-form  relative md:h-fit " onSubmit={handleSubmit}>
           <h2 className="text-xl font-bold mb-6 text-purple-500">Actualizar Articulo</h2>
           <h2 className='text-green-600 absolute z-20 top-11 '>{exito}</h2>
@@ -129,7 +129,7 @@ const handleChange = (e) => {
           </div>
         </form>
     </div>
-    <div className='md:w-[60%] '>
+    <div className='md:w-[65%] md:ml-10'>
       <Mostrar />
     </div>
     

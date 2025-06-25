@@ -46,11 +46,9 @@ callInventario()
 
 return (
     
-    <section className="flex flex-col items-center justify-self-center  text-black ">
+    <section className="flex flex-col items-center justify-self-center  text-black md:w-[90%] md:max-w-fit w-[90%]">
         
         <div className="flex flex-wrap justify-center items-center style-barra Modo-Dark gap-5 w-fit  h-fit m-[20px] md:max-w-fit p-5 shadow-xl/30">
-       
-          
           <ExportarCSV datos={datos}/>
           <SelectCategoria datos={datos} />
             <form onSubmit={hadlerBusqueda} className=' flex flex-row justify-center items-center w-fit relative'>

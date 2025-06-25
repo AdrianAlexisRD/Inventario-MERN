@@ -13,9 +13,9 @@ const Barra =({actualizar: modificar})=>{
 
 
   return(
-      <div className={`${icon?'w-[50px]':'w-[180px]'} barra style-barra z-20 Modo-Dark shadow-xl/30`}>
+      <div className={`${icon?'md:w-[50px] ':'md:w-[180px]'} barra style-barra z-20 Modo-Dark shadow-xl/30  `}>
           
-        <button onClick={cambiar} className={`absolute right-0 text-fuchsia-500 `}>
+        <button onClick={cambiar} className={`md:absolute right-0 text-fuchsia-500 hidden md:flex `}>
           {icon?
           <IconChevronCompactRight stroke={2} size={40} stroke-width="3" /> :
           <IconChevronCompactLeft stroke={2} size={40} stroke-width="3" /> 
@@ -24,24 +24,24 @@ const Barra =({actualizar: modificar})=>{
         </button>
 
           <button onClick={()=> setMostrarCont("main")}
-              className={`${modificar=='actualizar'? 'btn-barra':'btn-barra mt-12' }`}>
+              className={`${modificar=='actualizar'? 'btn-barra':'btn-barra md:mt-12' }`}>
                       
               <IconStack3 stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible  " />
-              <p className='overflow-hidden'>inventario</p>
+              <p className='overflow-hidden hidden md:flex'>inventario</p>
           </button>
 
           <button 
           onClick={()=> setMostrarCont("crear")} 
           className="btn-barra"
           > <IconSelect stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden'>Crear</p>
+            <p className='overflow-hidden hidden md:flex'>Crear</p>
           </button>
 
           <button 
           onClick={()=> setMostrarCont("actualizar")} 
           className="btn-barra"
           > <IconEdit stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden'>Modificar</p>
+            <p className='overflow-hidden hidden md:flex'>Modificar</p>
             
           </button>
         
