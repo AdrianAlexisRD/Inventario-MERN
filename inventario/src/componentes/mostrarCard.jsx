@@ -13,13 +13,15 @@ const icons = [
 <IconHome stroke={2} size={80} className='bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3'/>, 
 <IconBolt stroke={2} size={80} className='bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3'/>, 
 <IconToolsKitchen3 stroke={2}size={80} className='bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3'/>,
-<IconShirt stroke={2}size={80} className='bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3'/>
+<IconShirt stroke={2}size={80} className='bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3'/>,
+<IconBox stroke={2}size={80} className='bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3'/>
+
 ]
 
   const getIcon = (category) => {
     switch (category) {
       case 'Hogar':
-        return icons[0];
+        return icons[0]; 
       case 'Electronica':
         return icons[1];
       case 'Alimentos':
@@ -27,7 +29,7 @@ const icons = [
       case 'Ropa':
         return icons[3];
       default:
-        return null;
+        return icons[4];
     }
   };
 
