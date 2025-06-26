@@ -1,10 +1,10 @@
 import axios from 'axios';
-import {useContext,  useState } from 'react';
+import {useContext,  useState,  } from 'react';
 import { Autetificacion } from '../contexts/Conectar.Login';
 import Mostrar from './mostrarInventario';
 
 
-function Modify(){
+function Modify (){
   const { setActualizar , updated_id , updated_name }= useContext(Autetificacion)
   console.log(updated_name)
   const [articulo , setArticulo] = useState({ name: '', price: '', description: '', category: '', stock: ''})
@@ -55,7 +55,7 @@ const handleChange = (e) => {
 
 
   return(
-    <div className="flex justify-center flex-col md:flex-row items-center md:items-start">
+    <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion">
 
       <div className='border-color w-[90%]  rounded md:w-[400px] p-1 mt-15 h-fit '>
         <form  className="style-form  relative md:h-fit " onSubmit={handleSubmit}>
@@ -138,4 +138,4 @@ const handleChange = (e) => {
   )
 }
 
-export default Modify;
+export default (Modify);

@@ -46,7 +46,7 @@ callInventario()
 
 return (
     
-    <section className="flex flex-col items-center justify-self-center  text-black md:w-[90%] md:max-w-fit w-[90%]">
+    <section className="flex flex-col items-center justify-self-center  text-black md:w-[90%] md:max-w-fit w-[90%] animacion">
         
         <div className="flex flex-wrap justify-center items-center style-barra Modo-Dark gap-5 w-fit  h-fit m-[20px] md:max-w-fit p-5 shadow-xl/30">
           <ExportarCSV datos={datos}/>
@@ -63,7 +63,7 @@ return (
             <IconBaselineDensityLarge stroke={2} size={35} stroke-width="3" onClick={list} className="btn-br-horizontal "/>
           </div>
         </div>      
-          {!datos.length == 0 ? (changeView? <ViewList datos={datos}/> :<Card datos={datos} />) : <h2 className="text-fuchsia-500 text-2xl">Agregue un articulo</h2>}
+          {!datos.length == 0 ? (changeView? <ViewList datos={datos} className/> :<Card datos={datos} />) : <h2 className="text-fuchsia-500 text-2xl text-center">No hay producto para mostrar</h2>}
           {/* <LinesChart/> */}
     </section>
 )}

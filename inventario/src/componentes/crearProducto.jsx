@@ -18,11 +18,9 @@ const [articulo , setArticulo]= useState({
 })
 
 
-
 const hacerPost = async () =>{
   try{
     const res = await axios.post(`http://localhost:5002/api`, articulo)
-    console.log(res.data)
     setArticulo(
       { user: userON, 
         name: '', 
@@ -57,7 +55,7 @@ const handleSubmit = async (e) => {
 
 
   return (
-    <div className="flex justify-center flex-col md:flex-row">
+    <div className="flex justify-center flex-col md:flex-row animacion">
 
     <div className="flex justify-center h-fit relative md:pl-10">
       <div className="h-[15px] text-[18px] absolute top-17 ">

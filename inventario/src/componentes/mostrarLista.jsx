@@ -15,7 +15,7 @@ export default function ViewList({datos}){
 const {  updated_id ,  setUpdated_id , setUpdated_name } = useContext(Autetificacion)
 
   return(
-    <ul className="grid grid-cols-1 gap-5 style-barra md:w-[600px] xl:w-fit h-[700px] w-[90%] overflow-auto Modo-Dark mb-7 shadow-xl/30">
+    <ul className="grid grid-cols-1 gap-5 style-barra md:w-[600px] xl:w-fit h-[700px] w-[90%] overflow-auto Modo-Dark mb-7 shadow-xl/30 aparecer">
       { datos.map((elemento, index) =>(
       <li key={index}      
        onClick={(e)=>{ 

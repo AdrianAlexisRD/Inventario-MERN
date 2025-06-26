@@ -35,9 +35,9 @@ const icons = [
 
   return(
     <>
-    <ul className="flex flex-wrap justify-center p-5 mt-5 gap-2 Modo-Dark md:w-[90%] w-[600px] overflow-auto rounded border-2 border-fuchsia-400 ">
+    <ul className="flex flex-wrap justify-center p-5 mt-5 gap-2 Modo-Dark md:w-[90%] w-[600px] overflow-auto rounded border-2 border-fuchsia-400 aparecer ">
       { datos.map((elemento, index) =>(
-      <li key={index} className=" dark:bg-[#3f384c] mb-2 items-center rounded-2xl w-[210px] sm:w-[260px] border-2 border-fuchsia-500 relative hover:opacity-80 transition-all ease-in- duration-300 ">
+      <li key={index} className=" dark:bg-[#3f384c] mb-2 items-center rounded-2xl w-[210px] sm:w-[260px] border-2 border-fuchsia-500 relative hover:opacity-80">
         <BtnDelete  id={elemento._id} />
         {getIcon(elemento.category)}
         <div className='flex flex-col items-center gap-5 pb-2 mt-5 '>
