@@ -13,7 +13,7 @@ const Barra =({actualizar: modificar})=>{
 
 
   return(
-      <div className={`${icon?'md:w-[50px] ':'md:w-[180px]'} barra style-barra z-20 Modo-Dark shadow-xl/30  `}>
+      <div className={`${icon?'md:w-[50px] ':'md:w-[180px]'} barra style-barra z-20 Modo-Dark shadow-xl/30 mt-0 `}>
           
         <button onClick={cambiar} className={`md:absolute right-0 text-fuchsia-500 hidden md:flex `}>
           {icon?
@@ -34,7 +34,7 @@ const Barra =({actualizar: modificar})=>{
           onClick={()=> setMostrarCont("crear")} 
           className="btn-barra"
           > <IconSelect stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden hidden md:flex active:flex'>Crear</p>
+            <p className='overflow-hidden hidden md:flex'>Crear</p>
           </button>
 
           <button 

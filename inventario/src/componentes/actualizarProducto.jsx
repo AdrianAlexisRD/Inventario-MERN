@@ -57,12 +57,12 @@ const handleChange = (e) => {
   return(
     <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion">
 
-      <div className='border-color w-[90%]  rounded md:w-[400px] p-1 mt-15 h-fit '>
+      <div className='border-color w-[80%]  rounded md:w-[400px] p-1 mt-15 h-fit '>
         <form  className="style-form  relative md:h-fit " onSubmit={handleSubmit}>
-          <h2 className="text-xl font-bold mb-6 text-purple-500">Actualizar Articulo</h2>
+          <h2 className="text-xl font-extrabold mb-6 text-purple-500">Actualizar Articulo</h2>
           <h2 className='text-green-600 absolute z-20 top-11 '>{exito}</h2>
           <h2 className='text-red-600 absolute z-20 top-11 '>{manejarError}</h2>
-          <label htmlFor='name' className="block mb-2">
+          <label htmlFor='name' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
             Nombre articulo
             <input
               type="text"
@@ -74,7 +74,7 @@ const handleChange = (e) => {
             />
             </label>
 
-            <label htmlFor='price' className="block mb-2">
+            <label htmlFor='price' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
             price
             <input
               type="text"
@@ -85,7 +85,7 @@ const handleChange = (e) => {
               
             />
           </label>
-                <label htmlFor='descripcion' className="block mb-2">
+                <label htmlFor='descripcion' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
             descripcion
             <input
               type="text"
@@ -97,7 +97,7 @@ const handleChange = (e) => {
             />
             </label>
             
-            <label htmlFor='categoria' className="block mb-2">
+            <label htmlFor='categoria' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
             Categoria
             <input
               type='text'
@@ -109,7 +109,7 @@ const handleChange = (e) => {
             </label>
 
         
-                <label htmlFor='stock' className="block mb-2">
+                <label htmlFor='stock' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
             Cantidad
             <input
               type="text"

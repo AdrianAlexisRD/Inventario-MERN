@@ -63,74 +63,74 @@ const handleSubmit = async (e) => {
         <h2 className="text-red-500 ">{mostrarError}</h2>
       </div>
 
-      <div className="border-color rounded md:w-fit p-1 mt-8">
-    <form  className="style-form " onSubmit={handleSubmit}>
-      <h2 className="text-[26px] font-bold mb-10 text-purple-500">Crear producto</h2>
+    <div className="border-color rounded md:w-fit p-1 mt-8">
+      <form  className="style-form " onSubmit={handleSubmit}>
+        <h2 className="text-[26px] font-extrabold mb-10 text-purple-500 ">Crear producto</h2>
 
-      <label htmlFor='name' className="block mb-2">
-        Nombre articulo
-        <input
-          type="text"
-          name="name"
-          value={articulo.name}
-          onChange={handleChange}
-          className="style-input"
-          required
-        />
+        <label htmlFor='name' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          Nombre articulo
+          <input
+            type="text"
+            name="name"
+            value={articulo.name}
+            onChange={handleChange}
+            className="style-input"
+            required
+          />
+          </label>
+
+          <label htmlFor='price' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          price
+          <input
+            type="number"
+            name="price"
+            value={articulo.price}
+            onChange={handleChange}
+            className="style-input"
+            required
+          />
+        </label>
+          <label htmlFor='descripcion' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          descripcion
+          <input
+            type="text"
+            name="description"
+            value={articulo.description}
+            onChange={handleChange}
+            className="style-input"
+            required
+          />
+          </label>
+          <label htmlFor='categoria' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+              Categoria
+              <input
+                type='text'
+                name="category" 
+                value={articulo.category} 
+                onChange={handleChange} 
+                className="style-input "
+              />
+              </label>
+      
+          <label htmlFor='stock' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          Cantidad
+          <input
+            type="number"
+            name="stock"
+            value={articulo.stock}
+            onChange={handleChange}
+            className="style-input"
+            required
+          />
         </label>
 
-         <label htmlFor='price' className="block mb-2">
-        price
-        <input
-          type="number"
-          name="price"
-          value={articulo.price}
-          onChange={handleChange}
-          className="style-input"
-          required
-        />
-      </label>
-        <label htmlFor='descripcion' className="block mb-2">
-        descripcion
-        <input
-          type="text"
-          name="description"
-          value={articulo.description}
-          onChange={handleChange}
-          className="style-input"
-          required
-        />
-        </label>
-        <label htmlFor='categoria' className="block mb-2">
-            Categoria
-            <input
-              type='text'
-              name="category" 
-              value={articulo.category} 
-              onChange={handleChange} 
-              className="style-input "
-            />
-            </label>
-     
-         <label htmlFor='stock' className="block mb-2">
-        Cantidad
-        <input
-          type="number"
-          name="stock"
-          value={articulo.stock}
-          onChange={handleChange}
-          className="style-input"
-          required
-        />
-      </label>
+        <div className='flex justify-center gap-5'>
+          <button type="submit" className="style-btn">
+            Submit
+          </button>
 
-      <div className='flex justify-center gap-5'>
-        <button type="submit" className="style-btn">
-          Submit
-        </button>
-
-      </div>
-    </form>
+        </div>
+      </form>
     </div>
     </div>
       <div className="md:w-[65%] md:ml-10">

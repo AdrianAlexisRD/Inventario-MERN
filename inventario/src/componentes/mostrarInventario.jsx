@@ -53,10 +53,9 @@ return (
           <SelectCategoria datos={datos} />
             <form onSubmit={hadlerBusqueda} className=' flex flex-row justify-center items-center w-fit relative'>
                 <input type="text"ref={producto} className='min-w-[250px] h-9 bg-white rounded border-2 static  border-fuchsia-300 text-black'  placeholder="nombre del articulo"/>
-              <button type="submit" className="absolute right-0.5 border-color p-0.5 rounded">
-                <IconSearch type="submit" stroke={2} size={30} stroke-width="3" className='text-white '/>
-
-              </button>
+                <button type="submit" className="absolute right-0.5 border-color p-0.5 rounded">
+                  <IconSearch type="submit" stroke={2} size={30} stroke-width="3" className='text-white '/>
+                </button>
             </form>
           <div className="flex gap-4">
             <IconId stroke={2} size={40} onClick={card} stroke-width="3" className="btn-br-horizontal  " />
