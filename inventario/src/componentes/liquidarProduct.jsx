@@ -1,14 +1,14 @@
 import axios from 'axios';
-import {useContext,  useState} from 'react';
+import {useContext,  useState,  } from 'react';
 import { Autetificacion } from '../contexts/Conectar.Login';
 import Mostrar from './mostrarInventario';
 
 
-function Modify (){
+export default function Liquidar (){
+
   const { setActualizar , updated_id , updated_name }= useContext(Autetificacion)
   console.log(updated_name)
-  const [articulo , setArticulo] = useState(
-    { name: '', price: '', description: '', category: '', stock: '' })
+  const [articulo , setArticulo] = useState({ name: '', price: '', description: '', category: '', stock: ''})
   const [exito , setExito] = useState('')
   const [manejarError , setError] = useState('')
   
@@ -25,16 +25,11 @@ const handleChange = (e) => {
 
 
   const modificar =  async () =>{
-  
-    const modifyArticulo = Object.fromEntries(
-    Object.entries(articulo).filter(([clave]) => clave !== "createdAt" && clave !== "__v" && clave !== "_id"  ));
-
+    console.log(updated_id , )
     const articuloFiltrado = Object.fromEntries(
     // eslint-disable-next-line no-unused-vars
-    Object.entries(modifyArticulo).filter(([key , value]) => value !== '' && value !== null && value !== undefined)
+    Object.entries(articulo).filter(([key , value]) => value !== '' && value !== null && value !== undefined)
   );
-  
-    console.log(articuloFiltrado)
 
       try{
           const res = await axios.patch(`http://localhost:5002/api/${updated_id}`,
@@ -44,9 +39,7 @@ const handleChange = (e) => {
           console.log(datosUpdated)
           if (res.status === 200) {
           setActualizar(articulo)
-          setArticulo(
-          { name: '', price: '', description: '', category: '', stock: ''}
-          )
+          setArticulo(datosUpdated)
           setTimeout(() => setExito(''), 1000);
           setExito('!Se Actualizo correctamente!')
           }
@@ -59,24 +52,16 @@ const handleChange = (e) => {
       }
   }
 
-// useEffect(
-//   ()=>{
-    
-//   }
-// ,[updated_id , updated_name])
-
-// .color-primario{ @apply text-[#1E3A8A]}
-// .color-secundario{ @apply text-[#3B82F6]}
 
   return(
     <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion">
 
-      {/* <div className='border-color   rounded  p-1  h-fit '> */}
-        <form  className="style-form  relative md:h-fit mt-15 md:w-[400px] w-[80%] border-color" onSubmit={handleSubmit}>
-          <h2 className="text-xl font-extrabold mb-6 color-primario">Actualizar Articulo</h2>
+      <div className='border-color w-[80%]  rounded md:w-[400px] p-1 mt-15 h-fit '>
+        <form  className="style-form  relative md:h-fit " onSubmit={handleSubmit}>
+          <h2 className="text-xl font-extrabold mb-6 text-purple-500">Actualizar Articulo</h2>
           <h2 className='text-green-600 absolute z-20 top-11 '>{exito}</h2>
           <h2 className='text-red-600 absolute z-20 top-11 '>{manejarError}</h2>
-          <label htmlFor='name' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
+          <label htmlFor='name' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
             Nombre articulo
             <input
               type="text"
@@ -88,42 +73,30 @@ const handleChange = (e) => {
             />
             </label>
 
-            <label htmlFor='price' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
-            price
+            <label htmlFor='price' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+            ID Empleado
             <input
               type="text"
-              name="price"
+              name="IdEMpleado"
               value={articulo.price}
               onChange={handleChange}
               className="style-input"
               
             />
           </label>
-                <label htmlFor='descripcion' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
-            descripcion
+            <label htmlFor='descripcion' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+            Proposito
             <input
               type="text"
-              name="description"
+              name=""
               value={articulo.description}
               onChange={handleChange}
               className="style-input"
               
             />
             </label>
-            
-            <label htmlFor='categoria' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
-            Categoria
-            <input
-              type='text'
-              name="category" 
-              value={articulo.category} 
-              onChange={handleChange} 
-              className="style-input "
-            />
-            </label>
 
-        
-                <label htmlFor='stock' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
+            <label htmlFor='stock' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
             Cantidad
             <input
               type="text"
@@ -142,7 +115,7 @@ const handleChange = (e) => {
 
           </div>
         </form>
-    
+    </div>
     <div className='md:w-[65%] md:ml-10'>
       <Mostrar />
     </div>
@@ -150,6 +123,6 @@ const handleChange = (e) => {
     </div>
     
   )
-}
 
-export default (Modify);
+
+}

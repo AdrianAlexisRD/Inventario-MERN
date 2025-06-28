@@ -8,7 +8,7 @@ const cambiarStado = () => dispatch({type: 'RESET'})
 
     return(
         <button onClick={cambiarStado} className='gradient-text-shadow'>
-          <Link className="text-transparent bg-clip-text border-color font-bold" to='/'>Logout</Link>
+          <Link className="text-transparent bg-clip-text color-primario font-bold" to='/'>Logout</Link>
         </button>
     )
 }

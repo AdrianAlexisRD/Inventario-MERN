@@ -4,29 +4,38 @@
 
 .bg-li{ @apply bg-[#121212] }
 
-.style-li-home{ @apply flex text-fuchsia-500 md:text-[38px] gap-4 text-[15px] }
+.style-li-home{ @apply flex text-[#1E3A8A] md:text-[38px] gap-4 text-[15px] }
 
-.style-input{ @apply w-full p-2 border-2 rounded mt-1 focus:bg-white focus:text-black  border-fuchsia-500 }
+.style-input{ @apply w-full p-2 border-2 rounded mt-1 focus:bg-white focus:text-black  border-[#1E3A8A] }
 
-.style-btn{ @apply bg-fuchsia-500 text-white px-4 py-2 rounded hover:bg-purple-600 active:scale-90 }
+.style-btn{ @apply bg-[#1E3A8A] text-white px-4 py-2 rounded hover:bg-[#3B82F6] active:scale-90 }
 
 .style-form{ @apply shadow-xl/50  p-4 dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white rounded }
 
-.btn-barra{ @apply flex gap-2 items-center rounded p-1 text-fuchsia-500 hover:bg-[#121212] dark:hover:bg-white hover:text-purple-500 active:scale-[0.95]}
+.btn-barra{ @apply flex gap-2 items-center rounded p-1 
+  text-[#3B82F6] hover:bg-[#121212] 
+  dark:hover:bg-white hover:text-[#1E3A8A]
+   active:scale-[0.95] }
 
-.style-barra{ @apply  rounded border-fuchsia-400 border-2 }
+.style-barra{ @apply  rounded border-[#1E3A8A] border-2 }
 
-.barra{ @apply h-fit mt-[100px] flex md:flex-col gap-4 p-2 md:p-0 md:pt-4 md:absolute md:left-2 md:top-[25vh] transition-all duration-300 ease-in-out}
+.barra{ @apply h-fit mt-[100px] flex md:flex-col gap-4 p-2 md:p-0 md:pt-4 md:absolute md:left-2 md:top-[25vh]}
 
 .card-line{ @apply flex gap-3 border-b-1 border-white w-[90%] p-1.5 }
 
-.btn-br-horizontal{@apply text-shadow-lg/30 rounded p-1 hover:bg-purple-500 active:bg-fuchsia-500 active:scale-[0.90]}
+.btn-br-horizontal{@apply text-shadow-lg/30 rounded p-1 hover:bg-[#1E3A8A] active:bg-[#3B82F6] active:scale-[0.90]}
 
-.border-color{@apply bg-gradient-to-r from-fuchsia-500 to-purple-800}
+.color-primario{ @apply text-[#1E3A8A]}
+
+.color-secundario{ @apply text-[#3B82F6]}
+
+
+
+.border-color{@apply border-[#1E3A8A] border-3}
 
 .Modo-Dark{ @apply dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white}
 
-.icon-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-fuchsia-500 rounded-2xl p-3 }
+.icon-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3 }
 *{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
@@ -36,7 +45,7 @@
 
 .gradient-text-shadow:hover{
   color: white; 
-  text-shadow: 0 0 15px #ed6bff, 0 0 15px white, 0 0 25px #2f0335  
+  text-shadow: 0 0 30px #3B82F6, 0 0 15px white, 0 0 25px #2f0335  
 }
 
 .animacion {

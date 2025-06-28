@@ -12,10 +12,10 @@ const BuscarArticulo = () =>{
         <input type="text" className='
          w-[200px] h-9 bg-white 
           rounded border-2 static 
-         border-fuchsia-300 text-black
+         border-color text-black
           active:bg-blue-400'  
           placeholder="Buscar..."/>
-        <IconSearch stroke={2} className='text-fuchsia-400  absolute right-2'/>
+        <IconSearch stroke={2} className='color-primario z-20  absolute right-2'/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ const Home = () => {
     <div className="flex flex-col md:flex-row md:gap-[50px] md:m-5 mt-10   items-center md:justify-center h-dvh  ">
       <div className="border-color p-1 mb-10 md:w-[50%] w-[90%]  ">
       <p className="md:text-[35px] Modo-Dark rounded p-2  ">
-        Bienvenido a <span className="text-fuchsia-500">StockMaster</span> Administra tu inventario de forma
+        Bienvenido a <span className="color-primario">StockMaster</span> Administra tu inventario de forma
         rápida, sencilla y organizada. Nuestro sistema te permite llevar el
         control total de tus productos, entradas, salidas y existencias en
         tiempo real.   

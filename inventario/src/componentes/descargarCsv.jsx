@@ -35,7 +35,7 @@ const ExportarCSV = ({ datos }) => {
   };
 
   return (
-    <IconDownload stroke={2} size={40} className='active:scale-90 text-fuchsia-500 hover:text-purple-500' onClick={exportar} />
+    <IconDownload stroke={2} size={40} className='active:scale-90 color-primario hover:text-[#3B82F6]' onClick={exportar} />
   );
 };
 

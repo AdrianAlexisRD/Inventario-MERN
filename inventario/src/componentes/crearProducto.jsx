@@ -65,9 +65,9 @@ const handleSubmit = async (e) => {
 
     <div className="border-color rounded md:w-fit p-1 mt-8">
       <form  className="style-form " onSubmit={handleSubmit}>
-        <h2 className="text-[26px] font-extrabold mb-10 text-purple-500 ">Crear producto</h2>
+        <h2 className="text-[26px] font-extrabold mb-10 color-secundario ">Crear producto</h2>
 
-        <label htmlFor='name' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+        <label htmlFor='name' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
           Nombre articulo
           <input
             type="text"
@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
           />
           </label>
 
-          <label htmlFor='price' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          <label htmlFor='price' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
           price
           <input
             type="number"
@@ -90,7 +90,7 @@ const handleSubmit = async (e) => {
             required
           />
         </label>
-          <label htmlFor='descripcion' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          <label htmlFor='descripcion' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
           descripcion
           <input
             type="text"
@@ -101,7 +101,7 @@ const handleSubmit = async (e) => {
             required
           />
           </label>
-          <label htmlFor='categoria' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          <label htmlFor='categoria' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
               Categoria
               <input
                 type='text'
@@ -112,7 +112,7 @@ const handleSubmit = async (e) => {
               />
               </label>
       
-          <label htmlFor='stock' className="block mb-2 text-fuchsia-500 text-shadow-lg/10 font-extrabold">
+          <label htmlFor='stock' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
           Cantidad
           <input
             type="number"

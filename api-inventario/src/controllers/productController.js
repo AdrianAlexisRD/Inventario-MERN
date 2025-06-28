@@ -41,7 +41,7 @@ exports.updateProduct = async (req, res) => {
     const { id } = req.params;  
     const datosAtualizados = req.body
     console.log(datosAtualizados)
-    console.log()
+
     
     const product = await Product.findByIdAndUpdate( id,
       { $set: datosAtualizados },
@@ -61,7 +61,6 @@ exports.updateProduct = async (req, res) => {
 exports.deleteProduct = async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
-
     if (!product) {
       return res.status(404).json({ error: 'Producto no encontrado' });
     }
