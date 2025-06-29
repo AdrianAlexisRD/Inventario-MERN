@@ -20,7 +20,7 @@ export default function ModoDark() {
 
   return (
     <div onClick={() => setActivo(!activo)} className="cursor-pointer  bg-clip-text color-secundario font-bold">
-      {activo ? <IconSun stroke={2} size={40}  className=" aparecer"/> : <IconMoon stroke={2} size={40} className="aparecer"/>}
+      {activo ? <IconSun stroke={2} size={40}  className=" aparecer text-amber-300"/> : <IconMoon stroke={2} size={40} className="aparecer"/>}
     </div>
   );
 }

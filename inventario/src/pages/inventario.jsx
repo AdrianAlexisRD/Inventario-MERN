@@ -7,6 +7,7 @@ import { useContext } from 'react';
 import { Autetificacion } from '../contexts/Conectar.Login';
 import Login from './login';
 import Modify from '../componentes/actualizarProducto';
+import Liquidar from '../componentes/liquidarProduct'
 
 
 const ListarArticulos = () => {
@@ -21,6 +22,8 @@ const Componente = () => {
       return <CreaArticulo />;
     case "actualizar":
       return <Modify/>;
+    case "Liquidar":
+      return <Liquidar/>;
     default:
       return <Mostrar/>;
   }

@@ -19,7 +19,7 @@ const Login = () => {
     try{
         const res = await axios.post(`http://localhost:5002/login`, formData)
         const data = await res.data.username
-        console.log('login' + data)
+       
         await dispatch({type: 'SET_VALUE', payload: data })
         navigate('/listaDeArticulos')
 
@@ -42,7 +42,7 @@ const Login = () => {
       <div className=' flex sm:items-center justify-center h-dvh relative'>
 
 
-        <div className='border-color m-12 p-2 rounded h-fit z-20'>
+        <div className='border-color m-12 p-3 rounded h-fit z-20'>
         <form className="style-form h-fit  w-[400px] sm:h-[300px] sm:w-[500px]" onSubmit={hacerLogin}>
           <h2 className="text-xl font-bold mb-4">Login</h2>
           <div className="block mb-2">

@@ -25,7 +25,7 @@ const {  updated_id ,  setUpdated_id , setUpdated_name } = useContext(Autetifica
         `grid sm:grid-cols-6 border-b-2 
         ${updated_id == elemento._id && 'dark:bg-[#e7e5ea] bg-[#121212] dark:text-black text-white rounded-2xl '}
          border-white hover:cursor-pointer 
-        shadow-2xs w-300 h-fit 
+        shadow-2xs w-350 h-fit 
         p-4  md:text-center relative`} >
           <BtnDelete  id={elemento._id} />
           <p className="color-secundario font-bold text-[20px] flex gap-2 items-center"><IconBox stroke={2} className='overflow-visible'/>{elemento.name}</p>

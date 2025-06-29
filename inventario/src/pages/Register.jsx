@@ -1,6 +1,7 @@
-import React, {  useState } from 'react';
+import {  useState } from 'react';
 import axios from 'axios';
 import Header from '../componentes/header';
+import BgHome from '../componentes/bg-home';
 
 
 
@@ -29,53 +30,55 @@ const SignUp = () =>{
   return (
     <div>
     <Header/>
-      <div className='flex items-center  h-dvh'>
-          <form  className="style-form" onSubmit={handleSubmit}>
-            <h2 className="text-xl font-bold mb-4">Registro</h2>
+    <BgHome/>
+      <div className='flex items-center justify-center h-dvh dark:bg-[#3f384c]'>
+        <div className='p-3 border-color '>
+          <form  className="style-form  rounded h-fit z-20 w-[500px]" onSubmit={handleSubmit}>
+              <h2 className="text-xl font-bold mb-4">Registro</h2>
 
-          <label htmlFor='email' className="block mb-2 ">
-                User name
+            <label htmlFor='email' className="block mb-2 ">
+                  User name
+                  <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  className="style-input "
+                  placeholder='my user'
+                  required
+                  />
+              </label>
+              <label htmlFor='email' className="block mb-2">
+              Email:
                 <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="style-input "
-                placeholder='my user'
-                required
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="style-input"
+                  placeholder='ejemplo@gamil.com'
+                  required
                 />
-            </label>
-            <label htmlFor='email' className="block mb-2">
-             Email:
+              </label>
+
+              <label htmlFor='password' className="block mb-2">
+              Password:
               <input
-                type="email"
-                name="email"
-                value={formData.email}
+                type="password"
+                name="password"
+                value={formData.password}
                 onChange={handleChange}
                 className="style-input"
-                placeholder='ejemplo@gamil.com'
+                placeholder='******'
                 required
               />
             </label>
 
-            <label htmlFor='password' className="block mb-2">
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="style-input"
-              placeholder='******'
-              required
-            />
-          </label>
-
-
-          <button type="submit" className="style-btn">
-            Submit
-          </button>
-        </form>
+            <button type="submit" className="style-btn">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   

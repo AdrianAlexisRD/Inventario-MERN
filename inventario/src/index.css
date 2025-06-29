@@ -29,8 +29,6 @@
 
 .color-secundario{ @apply text-[#3B82F6]}
 
-
-
 .border-color{@apply border-[#1E3A8A] border-3}
 
 .Modo-Dark{ @apply dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white}

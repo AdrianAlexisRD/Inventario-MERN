@@ -28,22 +28,27 @@ const Barra =({actualizar: modificar})=>{
                       
               <IconStack3 stroke={2} size={40} stroke-width="3" className=" overflow-visible  " />
               <div></div>
-              <p className='overflow-hidden text-[#1E3A8A] dark:text-white text-[18px] font-bold'>inventario</p>
+              <p className='overflow-hidden text-[#1E3A8A]  text-[18px] font-bold'>inventario</p>
           </button>
 
           <button 
           onClick={()=> setMostrarCont("crear")} 
           className={`btn-barra ${icon?'md:w-[50px]  ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}
           > <IconSelect stroke={2} size={40} stroke-width="3" className=" overflow-visible"/>
-            <p className='overflow-hidden  text-[#1E3A8A] dark:text-white text-[18px] font-bold '>Crear</p>
+            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold '>Crear</p>
           </button>
 
           <button 
           onClick={()=> setMostrarCont("actualizar")} 
           className={`btn-barra ${icon?'md:w-[50px] ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}
           > <IconEdit stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] dark:text-white font-bold'>Modificar</p>
-            
+            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold'>Modificar</p>         
+          </button>
+          <button 
+          onClick={()=> setMostrarCont("Liquidar")} 
+          className={`btn-barra ${icon?'md:w-[50px] ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}
+          > <IconEdit stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
+            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold'>Modificar</p>         
           </button>
         
       </div>

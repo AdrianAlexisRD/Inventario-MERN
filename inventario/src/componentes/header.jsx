@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import { useContext } from "react"
 import { Autetificacion } from "../contexts/Conectar.Login"
 import BtnLogout from './logout'
-import { IconPackage } from '@tabler/icons-react'
+import { IconPackage, IconUser } from '@tabler/icons-react'
 import ModoDark from './modoDark'
 
 const Header = ()=>{
@@ -19,7 +19,7 @@ const Header = ()=>{
                     <Link className='text-transparent color-primario font-bold' to='/'>Home</Link>
                 </li>
                 {!userON && <li className=' gradient-text-shadow'><Link className='text-transparent font-bold color-primario' to='/Login'>Login</Link></li>}
-                {userON && <li className=' pr-4  text-transparent font-bold bg-clip-text color-primario'> Bienvenido: {userON}</li>}
+                {userON && <li className=' pr-4  text-transparent font-bold bg-clip-text color-primario flex items-end gap-2'> <IconUser stroke={2} size={40} /> <h2 className=''>{userON}</h2></li>}
                 {userON && <li className=' pr-4 border-fuchsia-500 gradient-text-shadow font-bold'><Link className='text-transparent bg-clip-text color-primario' to='/listaDeArticulos'>Inventario</Link></li>}
                 {userON && <BtnLogout />}
                 <ModoDark/>

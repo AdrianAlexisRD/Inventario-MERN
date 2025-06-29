@@ -32,7 +32,7 @@ useEffect(()=>{
     
   try {
     const res = await axios.get(`http://localhost:5002/api?user=${userON}&${buscarPorCategoria}&name=${buscarNombre}`)
-    // console.log(res.data)
+  
     setDatos(res.data)
   } catch (error) {
         console.error('Error:', error.message);
