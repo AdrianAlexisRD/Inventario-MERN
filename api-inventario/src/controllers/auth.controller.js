@@ -4,21 +4,24 @@ const bcrypt = require('bcryptjs');
 
 exports.register = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password , empleado } = req.body;
+    console.log(empleado)
     
     if(password.length<3 && password == 12345678){
       return res.status(400).json({ message: 'constraseña invalida' });
     }
-    const existeElUsuario = await User.find({ email , username });
-    if (existeElUsuario) {
-      return res.status(400).json({ message: 'El usuario ya existe' });
-    }
+  const existeElUsuario = await User.findOne({ $or: [{ email }, { username }] });
+  if (existeElUsuario) {
+    return res.status(400).json({ message: 'El usuario ya existe' });
+  }
+
 
     const hashedPassword = await bcrypt.hash(password, 12);
     const newUser = await User.create({
       username,
       email,
-      password: hashedPassword
+      password: hashedPassword,
+      empleado 
     });
 
     setTokenCookie(res, token); 
@@ -29,7 +32,8 @@ exports.register = async (req, res) => {
         user: {
           id: newUser._id,
           username: newUser.username,
-          email: newUser.email
+          email: newUser.email,
+          empleado: newUser.empleado
         }
       }
     });

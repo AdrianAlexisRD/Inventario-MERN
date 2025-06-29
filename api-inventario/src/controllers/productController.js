@@ -3,15 +3,12 @@ const Product = require('../models/product');
 
 exports.getProducts = async (req, res) => {
   try {
-    const { category, user , name } = req.query;
-    console.log(user)
+    const { category , name } = req.query;
+    // console.log(req.body)
     
     const filtro = {};
     if (category ) filtro.category = category;
-    if (user )filtro.user = user ;
     if (name) filtro.name = name ;
-
-
     const products = await Product.find(filtro);
     res.json(products);
   } catch (error) {
@@ -21,14 +18,16 @@ exports.getProducts = async (req, res) => {
 
 
 exports.createProduct = async (req, res) => {
-  const {name , user} = req.body
+  const {name , empleado} = req.body
+  if(empleado !== 'supervisor'){
+    return res.status(400).json(error + 'solo supervisores')
+  }
   try {
     const product = new Product(req.body);
-    const repeatProduct = await Product.findOne({ name ,  user})
+    const repeatProduct = await Product.findOne({ name })
     if(repeatProduct){
       return res.status(400).json({ error: 'El producto ya existe para este usuario.' });
     }
-    
     await product.save();
     res.status(201).json(product);
   } catch (error) {
@@ -38,9 +37,10 @@ exports.createProduct = async (req, res) => {
 
 exports.updateProduct = async (req, res) => {
   try {
-    const { id } = req.params;  
+    const { id } = req.params;
+    const { empleado } = req.body
     const datosAtualizados = req.body
-    console.log(datosAtualizados)
+    console.log()
 
     
     const product = await Product.findByIdAndUpdate( id,
