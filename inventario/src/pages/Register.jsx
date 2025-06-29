@@ -6,11 +6,11 @@ import BgHome from '../componentes/bg-home';
 
 
 const SignUp = () =>{
-  const [formData, setFormData] = useState({username: '', email: '', password: ''});
-
+  const [formData, setFormData] = useState({username: '', email: '', password: '' , empleado: ''});
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
+    console.log(formData)
     
     try{
         const res = await axios.post(`http://localhost:5002/register`, formData)
@@ -21,6 +21,7 @@ const SignUp = () =>{
     }    
     
 }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((e) => ({ ...e,[name]: value,}));
@@ -33,7 +34,7 @@ const SignUp = () =>{
     <BgHome/>
       <div className='flex items-center justify-center h-dvh dark:bg-[#3f384c]'>
         <div className='p-3 border-color '>
-          <form  className="style-form  rounded h-fit z-20 w-[500px]" onSubmit={handleSubmit}>
+          <form  className="style-form  rounded h-fit z-20 w-[500px]" onSubmit={handleSubmit} >
               <h2 className="text-xl font-bold mb-4">Registro</h2>
 
             <label htmlFor='email' className="block mb-2 ">
@@ -73,8 +74,13 @@ const SignUp = () =>{
                 required
               />
             </label>
+              <select name="empleado" htmlFor= 'empleado' className='block mb-2' onChange={handleChange} value={formData.empleado}>
+                <option value="">Tipo de empleado</option>
+                <option value="colaborador">Colaborador</option>
+                <option value="supervisor">supervisor</option>
+              </select>
 
-            <button type="submit" className="style-btn">
+            <button type="submit" className="style-btn z-100">
               Submit
             </button>
           </form>

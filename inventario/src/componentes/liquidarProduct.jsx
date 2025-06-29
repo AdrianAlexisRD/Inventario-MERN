@@ -6,7 +6,7 @@ import Mostrar from './mostrarInventario';
 
 export default function Liquidar (){
 
-  const { setActualizar , updated_id , updated_name }= useContext(Autetificacion)
+  const { setActualizar , updated_id , updated_name , tipoAcceso }= useContext(Autetificacion)
   console.log(updated_name)
   const [articulo , setArticulo] = useState({ name: '', price: '', description: '', category: '', stock: ''})
   const [exito , setExito] = useState('')

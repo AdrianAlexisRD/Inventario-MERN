@@ -7,7 +7,7 @@ import BgHome from '../componentes/bg-home';
 
 
 const Login = () => {
-  const { dispatch } = useContext(Autetificacion);
+  const { dispatch , setUserON } = useContext(Autetificacion);
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   const navigate = useNavigate();
@@ -18,11 +18,13 @@ const Login = () => {
 
     try{
         const res = await axios.post(`http://localhost:5002/login`, formData)
-        const data = await res.data.username
-       
-        await dispatch({type: 'SET_VALUE', payload: data })
-        navigate('/listaDeArticulos')
+        const {username , empleado} = await res.data
+        console.log(empleado + username)
+        console.log(res.data)
 
+        setUserON(username)
+        await dispatch({type: 'SET_VALUE', payload: empleado  })
+        navigate('/listaDeArticulos')
  
     }catch(error){
         console.error('Error al hacer login' , error.message);

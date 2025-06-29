@@ -6,7 +6,7 @@ import { Autetificacion } from '../contexts/Conectar.Login';
 
 const SelectCategoria = () =>{
   const { setNameCate } = useContext(MostrarContext);
-  const { userON , actualizar} = useContext(Autetificacion);
+  const { actualizar } = useContext(Autetificacion);
   const [datos , setDatos] = useState([])
 
 
@@ -15,7 +15,7 @@ const SelectCategoria = () =>{
   const callInventario = async ()=>{
 
     try {
-      const res = await axios.get(`http://localhost:5002/api?user=${userON}`)
+      const res = await axios.get(`http://localhost:5002/api`)
       console.log(res.data)
       setDatos(res.data)
     } catch (error) {
@@ -23,7 +23,7 @@ const SelectCategoria = () =>{
         }
   }
     callInventario() 
-    }, [ userON, actualizar])
+    }, [ actualizar ])
 
     const handleSelect = (e) =>{
         const valorSelect = e.target.value
@@ -36,8 +36,6 @@ const SelectCategoria = () =>{
   })
 
   const categoriaFiltrada = [...new Set(categorias)]
-
-  //  console.log(categoriaFiltrada)
 
     return(
     <select onChange={handleSelect} className="w-[200px] text-center h-9 bg-[#3B82F6]/[0.6] rounded font-extrabold border-color shadow-xl dark:ring ">

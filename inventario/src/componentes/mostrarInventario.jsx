@@ -13,7 +13,7 @@ import axios from 'axios';
 const Mostrar =  ()=>{
   const [datos, setDatos]= useState([])
   const{nameCate } = useContext(MostrarContext)
-  const { userON , actualizar} = useContext(Autetificacion);
+  const { actualizar} = useContext(Autetificacion);
   const [buscarNombre , setBuscarNombre] = useState('')
   const buscarPorCategoria = `category=${nameCate}`
   const producto = useRef('')
@@ -31,7 +31,7 @@ useEffect(()=>{
   const callInventario = async ()=>{
     
   try {
-    const res = await axios.get(`http://localhost:5002/api?user=${userON}&${buscarPorCategoria}&name=${buscarNombre}`)
+    const res = await axios.get(`http://localhost:5002/api?${buscarPorCategoria}&name=${buscarNombre}`)
   
     setDatos(res.data)
   } catch (error) {
@@ -40,7 +40,7 @@ useEffect(()=>{
 }
 callInventario() 
 
-}, [buscarNombre, buscarPorCategoria, userON, actualizar])
+}, [buscarNombre, buscarPorCategoria, actualizar])
 
 
 
