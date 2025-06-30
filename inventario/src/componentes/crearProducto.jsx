@@ -4,17 +4,18 @@ import { Autetificacion } from "../contexts/Conectar.Login";
 import Mostrar from './mostrarInventario';
 
 const CreaArticulo = ()=>{
-const {userON , setActualizar}= useContext(Autetificacion)
+const {userON , setActualizar , tipoAcceso}= useContext(Autetificacion)
 const [creado , setCreado] = useState('')
 const [mostrarError , setMostrarError] = useState('')
 
 const [articulo , setArticulo]= useState({
-    user: userON,
+    user: userON ,
     name: '',
     price: '',
     description: '',
     category: '',
-    stock: ''
+    stock: '',
+    empleado: tipoAcceso
 })
 
 
@@ -22,7 +23,8 @@ const hacerPost = async () =>{
   try{
     const res = await axios.post(`http://localhost:5002/api`, articulo)
     setArticulo(
-      { user: userON, 
+      { user: userON,
+
         name: '', 
         price: '', 
         description: '', 
@@ -38,7 +40,7 @@ const hacerPost = async () =>{
   }catch(e){
     setTimeout(() => setMostrarError(''), 2000);
     setMostrarError('! Articulo ya creado !')
-    console.log(e + 'error al crear Articulo')
+    console.log(e)
   }
 
 }

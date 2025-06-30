@@ -1,6 +1,12 @@
 import {  useContext, useState } from "react"
 import { MostrarContext } from "../contexts/mostrar.producto";
-import { IconSelect , IconChevronCompactLeft, IconChevronCompactRight ,IconStack3,IconEdit  } from '@tabler/icons-react';
+import { IconSelect ,
+   IconChevronCompactLeft, 
+   IconChevronCompactRight ,
+   IconStack3,
+   IconEdit,
+   IconArrowsRightLeft
+  } from '@tabler/icons-react';
 
 
 const Barra =({actualizar: modificar})=>{
@@ -47,8 +53,8 @@ const Barra =({actualizar: modificar})=>{
           <button 
           onClick={()=> setMostrarCont("Liquidar")} 
           className={`btn-barra ${icon?'md:w-[50px] ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}
-          > <IconEdit stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold'>Modificar</p>         
+          > <IconArrowsRightLeft stroke={2} size={40} stroke-width="3" className=" text-color overflow-visible"/>
+            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold'>Liquidar</p>         
           </button>
         
       </div>

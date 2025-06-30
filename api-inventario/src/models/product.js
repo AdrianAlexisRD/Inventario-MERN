@@ -2,10 +2,15 @@ const mongoose = require('mongoose');
 
 
 const ProductSchema = new mongoose.Schema({
-  // user:{
-  //   type: String ,
-  //   required: true
-  // },
+  user:{
+    type: String ,
+    required: true
+  },
+  empleado:{
+    type: String ,
+    required: true ,
+    trim: true
+  },
   name: {
     type: String,
     required: [true, 'El nombre es obligatorio'],

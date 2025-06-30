@@ -2,8 +2,12 @@ const mongoose = require('mongoose');
 
 
 const ProductSchema = new mongoose.Schema({
-  idEmpleado:{
+  id_empleado:{
     type: Number ,
+    required: true
+  },
+  empleado:{
+    type: String ,
     required: true
   },
   name: {
@@ -12,18 +16,9 @@ const ProductSchema = new mongoose.Schema({
     trim: true,
     maxlength: [100, 'El nombre no puede exceder 100 caracteres']
   },
-  price: {
-    type: Number,
-    required: [true, 'El precio es obligatorio'],
-    min: [0, 'El precio no puede ser negativo']
-  },
-  description: {
+  proposito: {
     type: String,
     maxlength: [500, 'La descripción no puede exceder 500 caracteres']
-  },
-  category: {
-    type: String,
-    required: true,
   },
   stock: {
     type: Number,

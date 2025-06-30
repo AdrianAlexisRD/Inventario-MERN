@@ -40,9 +40,13 @@ exports.updateProduct = async (req, res) => {
     const { id } = req.params;
     const { empleado } = req.body
     const datosAtualizados = req.body
-    console.log()
-
-    
+    console.log(empleado)
+    if(empleado !== 'supervisor'){
+    return (
+      res.status(400).json('solo supervisores')
+      
+    )}
+        
     const product = await Product.findByIdAndUpdate( id,
       { $set: datosAtualizados },
       { new: true, runValidators: true }

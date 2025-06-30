@@ -24,8 +24,6 @@ exports.register = async (req, res) => {
       empleado 
     });
 
-    setTokenCookie(res, token); 
-
     res.status(201).json({
       status: 'success',
       data: {
@@ -56,7 +54,8 @@ exports.login = async (req, res) => {
     res.status(200).json({
           id: user._id,
           username: user.username,
-          email: user.email
+          email: user.email,
+          empleado: user.empleado
         });
 
   } catch (error) {

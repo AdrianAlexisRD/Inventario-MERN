@@ -1,4 +1,4 @@
-import { IconTrash  } from '@tabler/icons-react';
+import {   IconCopyX  } from '@tabler/icons-react';
 import axios from 'axios';
 import { useContext, useState } from 'react';
 import { Autetificacion } from '../contexts/Conectar.Login';
@@ -39,7 +39,7 @@ export default function BtnDelete({ id }) {
         disabled={isLoading}
         aria-label="Eliminar artículo"
       >
-        {!info &&<IconTrash 
+        {!info &&< IconCopyX  
           className={`hover:text-red-500 active:scale-[0.80] ${isLoading ? 'opacity-50 cursor-not-allowed': 'cursor-pointer'}`} 
           stroke={2} 
           size={30} 

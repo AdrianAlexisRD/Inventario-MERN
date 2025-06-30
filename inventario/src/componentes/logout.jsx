@@ -3,8 +3,11 @@ import { Autetificacion } from "../contexts/Conectar.Login"
 import { Link } from "react-router-dom"
 
 const BtnLogout = () =>{
-const {dispatch} = useContext(Autetificacion)
-const cambiarStado = () => dispatch({type: 'RESET'})
+const {dispatch, setTipoAcceso} = useContext(Autetificacion)
+const cambiarStado = () => {
+  dispatch({type: 'RESET'})
+  setTipoAcceso({type: 'RESET'})
+}
 
     return(
         <button onClick={cambiarStado} className='gradient-text-shadow'>

@@ -7,7 +7,7 @@ import BgHome from '../componentes/bg-home';
 
 
 const Login = () => {
-  const { dispatch , setUserON } = useContext(Autetificacion);
+  const { dispatch , setTipoAcceso } = useContext(Autetificacion);
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   const navigate = useNavigate();
@@ -22,8 +22,8 @@ const Login = () => {
         console.log(empleado + username)
         console.log(res.data)
 
-        setUserON(username)
-        await dispatch({type: 'SET_VALUE', payload: empleado  })
+        setTipoAcceso({type: 'SET_VALUE', payload: empleado  })
+        await dispatch({type: 'SET_VALUE', payload: username  })
         navigate('/listaDeArticulos')
  
     }catch(error){

@@ -12,7 +12,7 @@ import BtnDelete from './btnDelete';
 
 export default function ViewList({datos}){
 
-const {  updated_id ,  setUpdated_id , setUpdated_name } = useContext(Autetificacion)
+const {  updated_id ,  setUpdated_id , setUpdated_name,  setValorSctock } = useContext(Autetificacion)
 
   return(
     <ul className="grid grid-cols-1 gap-5 style-barra md:w-[600px] xl:w-fit h-[700px] w-[90%] overflow-auto Modo-Dark mb-7 shadow-xl/30 aparecer">
@@ -21,7 +21,8 @@ const {  updated_id ,  setUpdated_id , setUpdated_name } = useContext(Autetifica
        onClick={(e)=>{ 
         setUpdated_id(e.currentTarget.dataset.id) 
         setUpdated_name(e.currentTarget.dataset.name)
-      }} data-id={elemento._id} data-name={elemento.name} className={
+        setValorSctock(e.currentTarget.dataset.stock)
+      }} data-id={elemento._id} data-name={elemento.name} data-stock={elemento.stock} className={
         `grid sm:grid-cols-6 border-b-2 
         ${updated_id == elemento._id && 'dark:bg-[#e7e5ea] bg-[#121212] dark:text-black text-white rounded-2xl '}
          border-white hover:cursor-pointer 

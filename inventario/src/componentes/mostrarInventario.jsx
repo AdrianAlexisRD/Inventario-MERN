@@ -43,7 +43,6 @@ callInventario()
 }, [buscarNombre, buscarPorCategoria, actualizar])
 
 
-
 return (
     
     <section className="flex flex-col items-center justify-self-center  text-black md:w-[90%] md:max-w-fit w-[90%] animacion">

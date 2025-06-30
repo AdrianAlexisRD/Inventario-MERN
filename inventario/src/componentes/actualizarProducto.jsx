@@ -1,16 +1,25 @@
 import axios from 'axios';
-import {useContext,  useState} from 'react';
+import {useContext,  useState, useEffect} from 'react';
 import { Autetificacion } from '../contexts/Conectar.Login';
 import Mostrar from './mostrarInventario';
 
 
 function Modify (){
-  const { setActualizar , updated_id , updated_name }= useContext(Autetificacion)
-  console.log(updated_name)
+  const { setActualizar , updated_id , updated_name , tipoAcceso }= useContext(Autetificacion)
+  console.log(tipoAcceso)
   const [articulo , setArticulo] = useState(
-    { name: '', price: '', description: '', category: '', stock: '' })
+    { name: '', price: '', description: '', category: '', stock: '', empleado: tipoAcceso })
   const [exito , setExito] = useState('')
   const [manejarError , setError] = useState('')
+
+  useEffect(() => {
+  if (updated_name) {
+    setArticulo((prev) => ({
+      ...prev,
+      name: updated_name
+    }));
+  }
+}, [updated_name]);
   
 
 const handleSubmit = async (e) => {
@@ -20,11 +29,13 @@ const handleSubmit = async (e) => {
 
 const handleChange = (e) => {
     const { name, value } = e.target;
-    setArticulo((e) => ({ ...e,[name]: value,}));
+   setArticulo((prev) => ({ ...prev, [name]: value }));
+
   };
 
 
   const modificar =  async () =>{
+    console.log(articulo)
   
     const modifyArticulo = Object.fromEntries(
     Object.entries(articulo).filter(([clave]) => clave !== "createdAt" && clave !== "__v" && clave !== "_id"  ));
@@ -34,7 +45,6 @@ const handleChange = (e) => {
     Object.entries(modifyArticulo).filter(([key , value]) => value !== '' && value !== null && value !== undefined)
   );
   
-    console.log(articuloFiltrado)
 
       try{
           const res = await axios.patch(`http://localhost:5002/api/${updated_id}`,
@@ -45,28 +55,20 @@ const handleChange = (e) => {
           if (res.status === 200) {
           setActualizar(articulo)
           setArticulo(
-          { name: '', price: '', description: '', category: '', stock: ''}
+          { name: '', price: '', description: '', category: '', stock: '', empleado: tipoAcceso }
           )
           setTimeout(() => setExito(''), 1000);
           setExito('!Se Actualizo correctamente!')
           }
 
       }catch(error){
-        console.log('error al actualizar'+ error)
+        console.log(error)
           setTimeout(() => setError(''), 1000);
           setError('!Error al actualizar!')
         
       }
   }
 
-// useEffect(
-//   ()=>{
-    
-//   }
-// ,[updated_id , updated_name])
-
-// .color-primario{ @apply text-[#1E3A8A]}
-// .color-secundario{ @apply text-[#3B82F6]}
 
   return(
     <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion">
@@ -81,10 +83,9 @@ const handleChange = (e) => {
             <input
               type="text"
               name="name"
-              value={updated_name}
+              value={articulo.name}
               onChange={handleChange}
-              className="style-input"
-              readOnly 
+              className="style-input" 
             />
             </label>
 
