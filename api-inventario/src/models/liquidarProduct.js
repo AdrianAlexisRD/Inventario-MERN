@@ -26,7 +26,8 @@ const ProductSchema = new mongoose.Schema({
   }],
   nota: {
     type: String,
-    maxlength: [500, 'La descripción no puede exceder 500 caracteres']
+    maxlength: [500, 'La descripción no puede exceder 500 caracteres'],
+    require: true
   },
   // stock: {
   //   type: Number,

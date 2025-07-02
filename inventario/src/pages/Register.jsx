@@ -7,7 +7,8 @@ import BgHome from '../componentes/bg-home';
 
 const SignUp = () =>{
   const [formData, setFormData] = useState({username: '', email: '', password: '' , empleado: ''});
-
+  const [exito , setExito] = useState('')
+  const [manejarError , setError] = useState('')
   const handleSubmit = async (e) =>{
     e.preventDefault();
     console.log(formData)
@@ -15,9 +16,14 @@ const SignUp = () =>{
     try{
         const res = await axios.post(`http://localhost:5002/register`, formData)
         console.log(res.data)
+        setTimeout(() => setExito(''), 1000);
+        setExito('!Se ha registrado exitosamente!')
+        setFormData({username: '', email: '', password: '' , empleado: ''})
 
     }catch(error){
       console.log(error)
+      setTimeout(() => setError(''), 1000);
+      setError('!Error al Registrarse!')
     }    
     
 }
@@ -33,12 +39,16 @@ const SignUp = () =>{
     <Header/>
     <BgHome/>
       <div className='flex items-center justify-center h-dvh dark:bg-[#3f384c] '>
-        <div className='p-3 border-color shadow-xl/50 z-20'>
-          <form  className="style-form  rounded h-fit z-20 w-[500px] flex flex-col " onSubmit={handleSubmit} >
-              <h2 className="text-xl font-bold mb-4">Registro</h2>
+        <div className='p-3 border-color shadow-xl/50 z-20 rounded-2xl'>
 
+          <form  className="style-form  rounded h-fit z-20 w-[500px] flex flex-col " onSubmit={handleSubmit} >
+            <div className='flex justify-between'>
+              <h2 className="text-xl font-bold mb-4">Registro</h2>
+              <h2 className='text-green-600 z-20 top-11 '>{exito}</h2>
+              <h2 className='text-red-600 text-20 z-20 top-11 '>{manejarError}</h2>
+            </div>
             <label htmlFor='email' className="block mb-2 ">
-                  User name
+                  Nombre de usuario:
                   <input
                   type="text"
                   name="username"
@@ -77,9 +87,9 @@ const SignUp = () =>{
             <label htmlFor='password' className="block mb-2">
               confirme contraseña
               <input
-                // type="password"
-                name="password"
-                // value={formData.password}
+                type="password"
+                name="repeat password"
+                value={formData.password}
                 onChange={handleChange}
                 className="style-input"
                 required

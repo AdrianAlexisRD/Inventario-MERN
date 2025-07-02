@@ -7,7 +7,7 @@ const Home = () => {
   <Header />
   <BgHome />
     <div className="flex flex-col md:flex-row md:gap-[50px] md:m-5 mt-10   items-center md:justify-center h-dvh  ">
-      <div className="border-color p-3 mb-10 md:w-[50%] w-[90%]  ">
+      <div className="border-color rounded-2xl p-3 mb-10 md:w-[50%] w-[90%]  ">
       <p className="md:text-[35px] Modo-Dark rounded p-2  ">
         Bienvenido a <span className="color-primario">StockMaster</span> Administra tu inventario de forma
         rápida, sencilla y organizada. Nuestro sistema te permite llevar el

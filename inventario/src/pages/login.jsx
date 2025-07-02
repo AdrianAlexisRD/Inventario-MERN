@@ -9,6 +9,8 @@ import BgHome from '../componentes/bg-home';
 const Login = () => {
   const { dispatch , setTipoAcceso } = useContext(Autetificacion);
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [manejarError , setError] = useState('')
+  
 
   const navigate = useNavigate();
 
@@ -28,6 +30,8 @@ const Login = () => {
  
     }catch(error){
         console.error('Error al hacer login' , error.message);
+        setTimeout(() => setError(''), 1000);
+        setError('!Error al Registrarse!')
     }
  }
 
@@ -42,9 +46,13 @@ const Login = () => {
       <BgHome/>
 
       <div className=' flex sm:items-center justify-center h-dvh relative'>
-        <div className='border-color m-12 p-3 rounded h-fit z-20 shadow-xl/50'>
+        <div className='border-color m-12 p-3 rounded-2xl h-fit z-20 shadow-xl/50'>
           <form className="style-form h-fit  w-[400px] sm:h-[300px] sm:w-[500px]" onSubmit={hacerLogin}>
-            <h2 className="text-xl font-bold mb-4">Login</h2>
+            <div className='flex justify-between'>
+              <h2 className="text-xl font-bold mb-4">Login</h2>
+              <h2 className='text-red-600 text-20 z-20 top-11 '>{manejarError}</h2>
+            </div>
+
             <div className="block mb-2">
               <label htmlFor='email' className="block mb-1">
                 Email:
@@ -72,7 +80,7 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleChange}
                 className="style-input"
-                placeholder='*******'
+                placeholder=''
                 required
               />
             </div>

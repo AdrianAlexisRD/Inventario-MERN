@@ -64,8 +64,8 @@ const handleSubmit = async (e) => {
         <h2 className="text-red-500 ">{mostrarError}</h2>
       </div>
 
-    <div className="border-color rounded md:w-fit p-1 mt-8 shadow-xl/50">
-      <form  className="style-form " onSubmit={handleSubmit}>
+ 
+      <form  className="style-form style-barra border-2 border-[#1e3a8a] mt-8 " onSubmit={handleSubmit}>
         <h2 className="text-[26px] font-extrabold mb-10 color-secundario ">Crear producto</h2>
 
         <label htmlFor='name' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
@@ -132,7 +132,6 @@ const handleSubmit = async (e) => {
 
         </div>
       </form>
-    </div>
     </div>
       <div className="md:w-[65%]">
         <Mostrar />

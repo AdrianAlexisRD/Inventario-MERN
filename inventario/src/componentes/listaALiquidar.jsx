@@ -95,7 +95,7 @@ export default function ListaParaLiquidar({ producto, articulo }) {
     };
 
     return (
-        <div className="style-form border-color mt-6 shadow-xl/50 text-[18px] font-bold flex flex-col gap-5 relative">
+        <div className="style-form border-color mt-6 style-barra text-[18px] font-bold flex flex-col gap-5 relative">
             <h2 className='text-green-400 absolute z-20 top-11 '>{exito}</h2>
             <h2 className='text-red-400 absolute z-20 top-11 '>{manejarError}</h2>
             <h2 className='color-primario text-[24px]'>Lista para Liquidar</h2>
@@ -123,14 +123,14 @@ export default function ListaParaLiquidar({ producto, articulo }) {
             <div className='flex justify-around'>
                 <button 
                     onClick={agregar}
-                    className="bg-[#3B82F6] rounded border-2 w-[90px] flex justify-center active:scale-80 p-1 shadow-gray-950 shadow-xl/50 "
+                    className="style-btn flex justify-center active:scale-80 "
                 >
                     <IconPlus stroke={2} size={30} strokeWidth="3"  />
                 </button>
                             <button 
                     onClick={handleEnviar}
                     disabled={productos.length === 0}
-                    className="bg-[#3B82F6] rounded border-2 w-[90px] flex justify-center active:scale-80 p-1 shadow-xl/50"
+                    className="style-btn flex justify-center active:scale-80"
                 >
                     <IconTableDown stroke={2} size={30} strokeWidth="3"/>
                 </button>

@@ -23,7 +23,7 @@ const Barra =({actualizar: modificar})=>{
 
 
   return(
-      <div className={`${icon?'md:w-[50px] ':'md:w-[180px]'} barra style-barra z-20 Modo-Dark shadow-xl/30 mt-0 transition-all duration-500 ease-in-out`}>
+      <div className={`${icon?'md:w-[50px] ':'md:w-[180px]'} barra shadow-[0_35px_35px_rgba(0,0,0,0.25)] z-20 Modo-Dark shadow-xl/30 mt-0 transition-all duration-500 ease-in-out`}>
           
         <button onClick={cambiar} className={`md:absolute right-0 color-primario hidden md:flex `}>
           {icon?
@@ -36,7 +36,7 @@ const Barra =({actualizar: modificar})=>{
               className={`${modificar ==='actualizar'? 'btn-barra ':'btn-barra md:mt-12 ' } ${icon?'md:w-[50px] ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px]`}>        
               <IconStack3 stroke={2} size={40} strokeWidth="3" className=" overflow-visible  " />
               <div></div>
-              <p className='overflow-hidden text-[#1E3A8A]  text-[18px] font-bold'>inventario</p>
+              <p className='text-barra'>inventario</p>
           </button>
 
           {tipoAcceso === 'supervisor' &&
@@ -44,7 +44,7 @@ const Barra =({actualizar: modificar})=>{
             onClick={()=> setMostrarCont("crear")} 
             className={`btn-barra ${icon?'md:w-[50px]  ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}
             > <IconSelect stroke={2} size={40} strokeWidth="3" className=" overflow-visible"/>
-              <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold '>Crear</p>
+              <p className='text-barra'>Crear</p>
             </button>
           }
 
@@ -53,7 +53,7 @@ const Barra =({actualizar: modificar})=>{
             onClick={()=> setMostrarCont("actualizar")} 
             className={`btn-barra ${icon?'md:w-[50px] ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}
             > <IconEdit stroke={2} size={40} strokeWidth="3" className=" text-color overflow-visible"/>
-              <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold'>Modificar</p>         
+              <p className='text-barra'>Modificar</p>         
             </button>
           }
 
@@ -61,13 +61,13 @@ const Barra =({actualizar: modificar})=>{
             onClick={()=> setMostrarCont("Liquidar")} 
             className={`btn-barra ${icon?'md:w-[50px] ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}> 
             <IconArrowsRightLeft stroke={2} size={40} strokeWidth="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold'>Liquidar</p>         
+            <p className='text-barra'>Liquidar</p>         
           </button>
           <button 
             onClick={()=> setMostrarCont("Historial")} 
             className={`btn-barra ${icon?'md:w-[50px] ':'md:w-[180px]'} transition-all duration-500 ease-in-out hover:w-[180px] w-[50px] `}> 
             <IconListDetails  stroke={2} size={40} strokeWidth="3" className=" text-color overflow-visible"/>
-            <p className='overflow-hidden  text-[#1E3A8A] text-[18px] font-bold'>Historial</p>         
+            <p className='text-barra'>Historial</p>         
           </button>
         
       </div>

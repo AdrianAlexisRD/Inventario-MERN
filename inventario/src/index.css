@@ -4,19 +4,19 @@
 
 .bg-li{ @apply bg-[#121212] }
 
-.style-li-home{ @apply flex text-[#1E3A8A] md:text-[38px] gap-4 text-[15px] }
+.style-li-home{ @apply flex dark:text-white  md:text-[38px] gap-4 text-[15px] }
 
 .style-input{ @apply w-full p-2 border-2 rounded mt-1 focus:bg-white focus:text-black  border-[#1E3A8A] }
 
 .style-btn{ @apply bg-[#1E3A8A] text-white px-4 py-2 rounded hover:bg-[#3B82F6] active:scale-90 }
 
-.style-form{ @apply p-4 dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white rounded }
+.style-form{ @apply p-4 dark:bg-[#121212] bg-[#ffffff] text-black dark:text-white rounded }
 
-.btn-barra{ @apply flex gap-2 items-center rounded p-1 text-[#3B82F6] hover:bg-[#121212] dark:hover:bg-white hover:text-[#1E3A8A] active:scale-[0.95] }
+.btn-barra{ @apply flex gap-2 items-center rounded p-1 text-[#3B82F6] hover:bg-[#121212] hover:text-white dark:hover:text-[#121212]  dark:hover:bg-white  active:scale-[0.95] }
 
-.style-barra{ @apply  rounded border-[#1E3A8A] border-2 }
+.style-barra{ @apply  rounded-2xl shadow-[0_35px_35px_rgba(0,0,0,0.25)] border-[#1E3A8A] border-2 }
 
-.barra{ @apply h-fit mt-[100px] flex md:flex-col gap-4 p-2 md:p-0 md:pt-4 md:absolute md:left-2 md:top-[25vh]}
+.barra{ @apply md:h-[100%] md:mt-0 mt-[100px] flex md:flex-col gap-4 p-2 md:p-0 md:pt-4 md:absolute md:left-0 md:top-[90px]}
 
 .card-line{ @apply flex gap-3 border-b-1 border-white w-[90%] p-1.5 }
 
@@ -26,14 +26,15 @@
 
 .color-secundario{ @apply text-[#3B82F6]}
 
-.border-color{@apply border-[#1E3A8A] border-3}
+.border-color{@apply border-[#1E3A8A] border-2}
 
-.Modo-Dark{ @apply dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white }
+.Modo-Dark{ @apply dark:bg-[#121212] bg-[#ffffff] text-black dark:text-white }
 
 .icon-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3 }
 
 .style-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3}
 
+.text-barra{@apply overflow-hidden  }
 *{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;

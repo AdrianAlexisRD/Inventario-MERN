@@ -73,7 +73,7 @@ const handleChange = (e) => {
   return(
     <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion">
 
-      <div className='border-color rounded p-1 h-fit md:ml-7 border-color mt-15 shadow-xl/50'>
+      <div className='border-color style-barra p-1 h-fit md:ml-7 border-color mt-15 shadow-xl/50'>
         <form  className="style-form  relative md:h-fit  md:w-[400px] w-[80%] " onSubmit={handleSubmit}>
           <h2 className="text-xl font-extrabold mb-6 color-primario">Actualizar Articulo</h2>
           <h2 className='text-green-600 absolute z-20 top-11 '>{exito}</h2>

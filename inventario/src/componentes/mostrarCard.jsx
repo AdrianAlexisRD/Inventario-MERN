@@ -38,7 +38,7 @@ const icons = [
     <ul className="flex flex-wrap justify-center md:p-5 p-2 mt-5 gap-2 Modo-Dark md:w-[90%] w-[400px] overflow-auto rounded border-2 border-[#1E3A8A] aparecer mb-8">
       { datos.map((elemento, index) =>(
       <li key={index} className="flex dark:bg-[#3f384c] md:mb-2 items-center rounded-2xl w-[100%] sm:w-[400px] border-2 border-[#1E3A8A] relative hover:opacity-80">
-        <BtnDelete  id={elemento._id} />
+        {/* <BtnDelete  id={elemento._id} /> */}
         {getIcon(elemento.category)}
         <div className='flex flex-col items-center pb-2 md:w-[90%] '>
           <p className='card-line'><IconBox stroke={2} className='overflow-visible'/>{elemento.name}</p>

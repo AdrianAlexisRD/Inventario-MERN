@@ -52,7 +52,7 @@ const handleChange = (e) => {
     <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion  ">
 
       <div className=' w-[80%]  rounded md:w-[400px] p-1  mt-5 h-fit '>
-        <form  className="style-form   md:h-fit border-color shadow-xl/50 " onSubmit={handleSubmit}>
+        <form  className="style-form style-barra  md:h-fit border-color shadow-xl/50 " onSubmit={handleSubmit}>
           <h2 className="text-xl font-extrabold mb-6 color-primario">Liquidar Producto</h2>
 
           <label htmlFor='name' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
@@ -66,16 +66,6 @@ const handleChange = (e) => {
               readOnly 
             />
             </label>
-            <label htmlFor='nota' className="block mb-2 color-secundario  text-shadow-lg/10 font-extrabold">
-            Nota
-            <textarea
-              type="text"
-              name="nota"
-              value={articulo.nota}
-              onChange={handleChange}
-              className="style-input"            
-            />
-            </label>
 
             <label htmlFor='stock' className="block mb-2 color-secundario  text-shadow-lg/10 font-extrabold">
             Cantidad
@@ -84,8 +74,17 @@ const handleChange = (e) => {
               name="stock"
               value={articulo.stock}
               onChange={handleChange}
-              className="style-input"
-            
+              className="style-input"       
+            />
+          </label>
+          <label htmlFor='nota' className="block mb-2 color-secundario  text-shadow-lg/10 font-extrabold">
+            Nota
+            <textarea
+              type="text"
+              name="nota"
+              value={articulo.nota}
+              onChange={handleChange}
+              className="style-input"            
             />
           </label>
 
