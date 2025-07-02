@@ -8,7 +8,7 @@ exports.getProducts = async (req, res) => {
     
     const filtro = {};
     if (category ) filtro.category = category;
-    if (name) filtro.name = name ;
+    if (name) filtro.name = {$regex: '^' + name, $options: 'i'} ;
     const products = await Product.find(filtro);
     res.json(products);
   } catch (error) {
@@ -19,14 +19,14 @@ exports.getProducts = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   const {name , empleado} = req.body
-  if(empleado !== 'supervisor'){
-    return res.status(400).json(error + 'solo supervisores')
-  }
+  // if(empleado !== 'supervisor'){
+  //   return res.status(400).json( 'solo supervisores')
+  // }
   try {
     const product = new Product(req.body);
     const repeatProduct = await Product.findOne({ name })
     if(repeatProduct){
-      return res.status(400).json({ error: 'El producto ya existe para este usuario.' });
+      return res.status(400).json( 'El producto ya existe para este usuario.');
     }
     await product.save();
     res.status(201).json(product);
@@ -38,15 +38,18 @@ exports.createProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const { empleado } = req.body
-    const datosAtualizados = req.body
-    console.log(empleado)
-    if(empleado !== 'supervisor'){
-    return (
-      res.status(400).json('solo supervisores')
-      
-    )}
-        
+    const { sacarDeStock } = req.body
+    console.log(sacarDeStock)
+    console.log(id)
+    const nuevoValorStock = await Product.findOne({_id:id})
+
+    console.log(nuevoValorStock.stock)  
+
+    let datosAtualizados = req.body 
+    if(sacarDeStock){
+     const nuevoValorEnStock = nuevoValorStock.stock - sacarDeStock
+    datosAtualizados = {stock: nuevoValorEnStock }
+    }  
     const product = await Product.findByIdAndUpdate( id,
       { $set: datosAtualizados },
       { new: true, runValidators: true }

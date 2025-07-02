@@ -1,24 +1,25 @@
-import axios from 'axios';
+// import axios from 'axios';
 import {useContext,  useState, useEffect } from 'react';
 import { Autetificacion } from '../contexts/Conectar.Login';
 import Mostrar from './mostrarInventario';
+import ListaParaLiquidar from './listaALiquidar';
 
 
 export default function Liquidar (){
 
-  const { setActualizar , updated_id , updated_name , tipoAcceso, userON, valorDeStcok }= useContext(Autetificacion)
+  const { updated_id , updated_name , tipoAcceso, userON }= useContext(Autetificacion)
   console.log(updated_name)
   const [articulo , setArticulo] = useState(
     { 
       name: updated_name, 
-      proposito: '', 
+      nota: '', 
       stock: '', 
       id_empleado: '', 
       empleado:`${tipoAcceso}: ${userON}`
     })
-  const [exito , setExito] = useState('')
-  const [manejarError , setError] = useState('')
-  const {stock} = articulo
+  // const [exito , setExito] = useState('')
+  // const [manejarError , setError] = useState('')
+  const {stock} = articulo  
 
     useEffect(() => {
     if (updated_name) {
@@ -29,9 +30,11 @@ export default function Liquidar (){
     }
   }, [updated_name]);
 
+
+
 const handleSubmit = async (e) => {
   e.preventDefault();
-  hitorialLiquidacion()
+  // hitorialLiquidacion()
 }
 
 const handleChange = (e) => {
@@ -41,55 +44,17 @@ const handleChange = (e) => {
   };
 
 
-  const hitorialLiquidacion =  async () =>{
-    console.log(articulo )
 
-    try{
-        const res = await axios.post(`http://localhost:5002/api/liquidar`,
-          articulo
-        )
-        const productoLiquidado = res.data
-        console.log(productoLiquidado)
-        if (res.status === 200) {
-        setActualizar(articulo)
-        liquidacion()
-        setTimeout(() => setExito(''), 1000);
-        setExito('!Se Actualizo correctamente!')
-        }
-    }catch(error){
-      console.log( error)
-        setTimeout(() => setError(''), 1000);
-        setError('!Error al actualizar!')
-    }
-  }
 
-  const liquidacion = async()=>{
-    console.log(valorDeStcok)
-    console.log({stock: parseFloat(valorDeStcok)-parseFloat(stock)})
-    try{
-    const res = await axios.patch(`http://localhost:5002/api/${updated_id}`,
-    {stock:  parseFloat(valorDeStcok)-parseFloat(stock),
-    empleado: 'supervisor'
-    }
-    )
-    if(res.status === 200){
-      console.log('se actualizo correctamente')
-      console.log(res.data)
-    }
-    }catch(error){
-        console.log(error)
-    }
-  }
-
+  
 
   return(
-    <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion">
+    <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion  ">
 
-      <div className='border-color w-[80%]  rounded md:w-[400px] p-1 mt-15 h-fit '>
-        <form  className="style-form  relative md:h-fit " onSubmit={handleSubmit}>
+      <div className=' w-[80%]  rounded md:w-[400px] p-1  mt-5 h-fit '>
+        <form  className="style-form   md:h-fit border-color shadow-xl/50 " onSubmit={handleSubmit}>
           <h2 className="text-xl font-extrabold mb-6 color-primario">Liquidar Producto</h2>
-          <h2 className='text-green-600 absolute z-20 top-11 '>{exito}</h2>
-          <h2 className='text-red-600 absolute z-20 top-11 '>{manejarError}</h2>
+
           <label htmlFor='name' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
             Nombre articulo
             <input
@@ -101,24 +66,12 @@ const handleChange = (e) => {
               readOnly 
             />
             </label>
-
-            <label htmlFor='id_empleado' className="block mb-2 color-secundario  text-shadow-lg/10 font-extrabold">
-            ID Empleado
-            <input
-              type="number"
-              name="id_empleado"
-              value={articulo.id_empleado}
-              onChange={handleChange}
-              className="style-input"
-              
-            />
-          </label>
-            <label htmlFor='proposito' className="block mb-2 color-secundario  text-shadow-lg/10 font-extrabold">
-            Proposito
-            <input
+            <label htmlFor='nota' className="block mb-2 color-secundario  text-shadow-lg/10 font-extrabold">
+            Nota
+            <textarea
               type="text"
-              name="proposito"
-              value={articulo.proposito}
+              name="nota"
+              value={articulo.nota}
               onChange={handleChange}
               className="style-input"            
             />
@@ -136,15 +89,11 @@ const handleChange = (e) => {
             />
           </label>
 
-          <div className='flex justify-center gap-5'>
-            <button type="submit" className="style-btn">
-              Submit
-            </button>
-
-          </div>
+          
         </form>
+        <ListaParaLiquidar producto={ {name:updated_name , _id: updated_id , sacarDeStock: stock }} articulo={articulo} />
     </div>
-    <div className='md:w-[65%] md:ml-10'>
+    <div className='md:w-[65%]'>
       <Mostrar />
     </div>
     

@@ -6,11 +6,11 @@ const ProductSchema = new mongoose.Schema({
     type: String ,
     required: true
   },
-  empleado:{
-    type: String ,
-    required: true ,
-    trim: true
-  },
+  // empleado:{
+  //   type: String ,
+  //   required: true ,
+  //   trim: true
+  // },
   name: {
     type: String,
     required: [true, 'El nombre es obligatorio'],

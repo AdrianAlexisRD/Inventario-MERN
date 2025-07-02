@@ -10,11 +10,13 @@ const AutetificacionProviderWrapper = ({children}) => {
     const [actualizar , setActualizar] = useState('')
     const [updated_id , setUpdated_id] = useState('')
     const [updated_name , setUpdated_name] = useState('')
+ 
 
 
  return(
     <Autetificacion.Provider value={
-        {datosLogin , 
+        {
+        datosLogin , 
         setDatosLogin ,
         userON ,
         dispatch, 
@@ -24,11 +26,10 @@ const AutetificacionProviderWrapper = ({children}) => {
         setUpdated_id,
         updated_name,
         setUpdated_name,
-        tipoAcceso ,
+        tipoAcceso,
         setTipoAcceso,
         valorDeStcok,
-        setValorSctock
-
+        setValorSctock,
           }}>
         {children}
     </Autetificacion.Provider>

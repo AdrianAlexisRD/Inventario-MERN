@@ -11,3 +11,16 @@ exports.liquidarProduct = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+exports.historialProduct = async (req, res) =>{
+  console.log(req.body)
+  try{
+        const historialLiquidados= await Liquidar.find();
+        res.status(200).json(historialLiquidados);
+
+  }catch(e){
+    console.log(e)
+    res.status(400).json({ e: e.message });
+
+  }
+}

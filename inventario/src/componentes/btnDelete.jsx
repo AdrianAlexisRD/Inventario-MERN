@@ -8,7 +8,7 @@ import { Autetificacion } from '../contexts/Conectar.Login';
 export default function BtnDelete({ id }) {
   const [info, setInfo] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { setActualizar } = useContext(Autetificacion)
+  const { setActualizar, tipoAcceso } = useContext(Autetificacion)
 
 
   const borraArticulo = async (e) => {
@@ -32,8 +32,9 @@ export default function BtnDelete({ id }) {
 
   return (
     <div className="absolute right-2 top-2">
-      {info && (<h3 className='text-red-500' >{info}</h3>
-      )}
+
+      {info && (<h3 className='text-red-500' >{info}</h3>)}
+      { tipoAcceso === 'supervisor' &&
       <button 
         onClick={borraArticulo}
         disabled={isLoading}
@@ -44,7 +45,7 @@ export default function BtnDelete({ id }) {
           stroke={2} 
           size={30} 
         />}
-      </button>
+      </button>}
     </div>
   );
 }

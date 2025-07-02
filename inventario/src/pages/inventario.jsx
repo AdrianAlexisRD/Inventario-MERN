@@ -8,6 +8,7 @@ import { Autetificacion } from '../contexts/Conectar.Login';
 import Login from './login';
 import Modify from '../componentes/actualizarProducto';
 import Liquidar from '../componentes/liquidarProduct'
+import Historial from '../componentes/historial';
 
 
 const ListarArticulos = () => {
@@ -24,6 +25,8 @@ const Componente = () => {
       return <Modify/>;
     case "Liquidar":
       return <Liquidar/>;
+    case "Historial":
+      return <Historial/>;
     default:
       return <Mostrar/>;
   }

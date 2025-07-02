@@ -7,7 +7,6 @@ const CreaArticulo = ()=>{
 const {userON , setActualizar , tipoAcceso}= useContext(Autetificacion)
 const [creado , setCreado] = useState('')
 const [mostrarError , setMostrarError] = useState('')
-
 const [articulo , setArticulo]= useState({
     user: userON ,
     name: '',
@@ -60,12 +59,12 @@ const handleSubmit = async (e) => {
     <div className="flex justify-center flex-col md:flex-row animacion">
 
     <div className="flex justify-center h-fit relative md:pl-10">
-      <div className="h-[15px] text-[18px] absolute top-17 ">
+      <div className="h-[15px] text-[18px] absolute top-25 ">
         <h2 className="text-green-500 ">{creado}</h2>
         <h2 className="text-red-500 ">{mostrarError}</h2>
       </div>
 
-    <div className="border-color rounded md:w-fit p-1 mt-8">
+    <div className="border-color rounded md:w-fit p-1 mt-8 shadow-xl/50">
       <form  className="style-form " onSubmit={handleSubmit}>
         <h2 className="text-[26px] font-extrabold mb-10 color-secundario ">Crear producto</h2>
 
@@ -135,7 +134,7 @@ const handleSubmit = async (e) => {
       </form>
     </div>
     </div>
-      <div className="md:w-[65%] md:ml-10">
+      <div className="md:w-[65%]">
         <Mostrar />
       </div>
       </div>

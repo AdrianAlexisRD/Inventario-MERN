@@ -5,7 +5,7 @@ const Home = () => {
   return (
 <div className="justify-center dark:bg-[#3f384c] bg-white">
   <Header />
-  <BgHome/>
+  <BgHome />
     <div className="flex flex-col md:flex-row md:gap-[50px] md:m-5 mt-10   items-center md:justify-center h-dvh  ">
       <div className="border-color p-3 mb-10 md:w-[50%] w-[90%]  ">
       <p className="md:text-[35px] Modo-Dark rounded p-2  ">

@@ -10,8 +10,8 @@ const Header = ()=>{
     const {userON, tipoAcceso} = useContext(Autetificacion)
     
     return (
-        <header className='flex justify-around flex-wrap items-center dark:bg-[#121212] bg-[#e7e5ea] h-fit w-[100vw] sm:p-5 p-10 text-2xl flex-col sm:flex-row '> 
-            <h1 className="flex gap-2 text-[30px] text-white gradient-text-shadow">
+        <header className='flex justify-around flex-wrap items-center dark:bg-[#121212] bg-[#e7e5ea] h-fit w-[100vw] sm:p-5 p-10 text-2xl flex-col sm:flex-row'> 
+            <h1 className="flex gap-2 text-[30px] text-white ">
                 <IconPackage className='dark:text-white color-primario' size={52} stroke={2} />
                 <Link className='font-extrabold dark:text-white color-primario' to='/'>StockMaster</Link></h1>
             <ul className="flex gap-5 sm:mt-0 mt-6 items-center justify-center flex-wrap">

@@ -6,6 +6,7 @@ import { IconSearch,IconBaselineDensityLarge, IconId} from '@tabler/icons-react'
 import Card from "./mostrarCard";
 import ViewList from "./mostrarLista";
 import ExportarCSV from "./descargarCsv";
+import Historial from "./historial";
 // import LinesChart from "./graficos"
 
 import axios from 'axios';
@@ -51,9 +52,9 @@ return (
           <ExportarCSV datos={datos}/>
           <SelectCategoria datos={datos} />
             <form onSubmit={hadlerBusqueda} className=' flex flex-row justify-center items-center w-fit relative'>
-                <input type="text"ref={producto} className='min-w-[250px] h-9 bg-white rounded  static  border-color text-black'  placeholder="nombre del articulo"/>
+                <input type="text"ref={producto} className='min-w-[250px] h-9 bg-white rounded static border-color text-black'  placeholder="nombre del articulo"/>
                 <button type="submit" className="absolute right-0.5 p-0.5 rounded">
-                  <IconSearch type="submit" stroke={2} size={30} stroke-width="3" className='color-primario '/>
+                <IconSearch type="submit" stroke={2} size={30} stroke-width="3" className='color-primario '/>
                 </button>
             </form>
           <div className="flex gap-4">
@@ -61,8 +62,9 @@ return (
             <IconBaselineDensityLarge stroke={2} size={35} stroke-width="3" onClick={list} className="btn-br-horizontal "/>
           </div>
         </div>      
-          {!datos.length == 0 ? (changeView? <ViewList datos={datos} className/> :<Card datos={datos} />) : <h2 className="text-fuchsia-500 text-2xl text-center">No hay producto para mostrar</h2>}
+          {!datos.length == 0 ? (changeView? <ViewList datos={datos} className/> :<Card datos={datos} />) : <h2 className="dark:text-[#3B82F6] color-primario text-2xl text-center">No hay producto para mostrar</h2>}
           {/* <LinesChart/> */}
+          
     </section>
 )}
 

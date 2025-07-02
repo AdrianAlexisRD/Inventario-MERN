@@ -40,8 +40,8 @@ const SelectCategoria = () =>{
     return(
     <select onChange={handleSelect} className="w-[200px] text-center h-9 bg-[#3B82F6]/[0.6] rounded font-extrabold border-color shadow-xl dark:ring ">
         <option  value="">Categoria</option>
-        {categoriaFiltrada.map(category =>(
-        <option  value={category}>{category}</option> 
+        {categoriaFiltrada.map((category , index) =>(
+        <option key={index} value={category}>{category}</option> 
         ))}
 
     </select>

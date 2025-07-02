@@ -42,58 +42,56 @@ const Login = () => {
       <BgHome/>
 
       <div className=' flex sm:items-center justify-center h-dvh relative'>
+        <div className='border-color m-12 p-3 rounded h-fit z-20 shadow-xl/50'>
+          <form className="style-form h-fit  w-[400px] sm:h-[300px] sm:w-[500px]" onSubmit={hacerLogin}>
+            <h2 className="text-xl font-bold mb-4">Login</h2>
+            <div className="block mb-2">
+              <label htmlFor='email' className="block mb-1">
+                Email:
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="style-input"
+                placeholder='ejemplo@gmail.com'
+                required
+              />
+            </div>
 
+            <div className="block mb-2">
+              <label htmlFor='password' className="block mb-1">
+                Password:
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="style-input"
+                placeholder='*******'
+                required
+              />
+            </div>
 
-        <div className='border-color m-12 p-3 rounded h-fit z-20'>
-        <form className="style-form h-fit  w-[400px] sm:h-[300px] sm:w-[500px]" onSubmit={hacerLogin}>
-          <h2 className="text-xl font-bold mb-4">Login</h2>
-          <div className="block mb-2">
-            <label htmlFor='email' className="block mb-1">
-              Email:
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="style-input"
-              placeholder='ejemplo@gmail.com'
-              required
-            />
-          </div>
-
-          <div className="block mb-2">
-            <label htmlFor='password' className="block mb-1">
-              Password:
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="style-input"
-              placeholder='*******'
-              required
-            />
-          </div>
-
-          <div className='flex justify-center gap-5 mt-4'>
-            <button 
-              type="submit" 
-              className="style-btn">
-              sign in
-            </button>
-            <button 
-              type="button" 
-              className="style-btn"
-              onClick={() => navigate('/SignUp')}
-            >
-              Sign up
-            </button>
-          </div>
-        </form>
+            <div className='flex justify-center gap-5 mt-4'>
+              <button 
+                type="submit" 
+                className="style-btn">
+                sign in
+              </button>
+              <button 
+                type="button" 
+                className="style-btn"
+                onClick={() => navigate('/SignUp')}
+              >
+                Sign up
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

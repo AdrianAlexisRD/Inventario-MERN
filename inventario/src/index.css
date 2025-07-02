@@ -10,12 +10,9 @@
 
 .style-btn{ @apply bg-[#1E3A8A] text-white px-4 py-2 rounded hover:bg-[#3B82F6] active:scale-90 }
 
-.style-form{ @apply shadow-xl/50  p-4 dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white rounded }
+.style-form{ @apply p-4 dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white rounded }
 
-.btn-barra{ @apply flex gap-2 items-center rounded p-1 
-  text-[#3B82F6] hover:bg-[#121212] 
-  dark:hover:bg-white hover:text-[#1E3A8A]
-   active:scale-[0.95] }
+.btn-barra{ @apply flex gap-2 items-center rounded p-1 text-[#3B82F6] hover:bg-[#121212] dark:hover:bg-white hover:text-[#1E3A8A] active:scale-[0.95] }
 
 .style-barra{ @apply  rounded border-[#1E3A8A] border-2 }
 
@@ -31,9 +28,12 @@
 
 .border-color{@apply border-[#1E3A8A] border-3}
 
-.Modo-Dark{ @apply dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white}
+.Modo-Dark{ @apply dark:bg-[#121212] bg-[#e7e5ea] text-black dark:text-white }
 
 .icon-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3 }
+
+.style-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3}
+
 *{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
