@@ -10,7 +10,7 @@
 
 .style-btn{ @apply bg-[#1E3A8A] text-white px-4 py-2 rounded hover:bg-[#3B82F6] active:scale-90 }
 
-.style-form{ @apply p-4 dark:bg-[#121212] bg-[#ffffff] text-black dark:text-white rounded }
+.style-form{ @apply p-4 dark:bg-[#121212] bg-[#ffffff] text-black dark:text-white rounded-2xl }
 
 .btn-barra{ @apply flex gap-2 items-center rounded p-1 text-[#3B82F6] hover:bg-[#121212] hover:text-white dark:hover:text-[#121212]  dark:hover:bg-white  active:scale-[0.95] }
 
@@ -70,5 +70,8 @@
 
 }
 
+@keyframes girarLOGO {
+  from{}
+}
 
 

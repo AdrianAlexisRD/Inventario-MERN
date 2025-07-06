@@ -38,10 +38,8 @@ const SignUp = () =>{
     <div>
     <Header/>
     <BgHome/>
-      <div className='flex items-center justify-center h-dvh dark:bg-[#3f384c] '>
-        <div className='p-3 border-color shadow-xl/50 z-20 rounded-2xl'>
-
-          <form  className="style-form  rounded h-fit z-20 w-[500px] flex flex-col " onSubmit={handleSubmit} >
+      <div className='flex items-center justify-center h-dvh dark:bg-[#3f384c] '>      
+          <form  className="style-form  h-fit z-20 w-[500px] flex flex-col border-color shadow-[0_35px_35px_rgba(0,0,0,0.25)]" onSubmit={handleSubmit} >
             <div className='flex justify-between'>
               <h2 className="text-xl font-bold mb-4">Registro</h2>
               <h2 className='text-green-600 z-20 top-11 '>{exito}</h2>
@@ -107,7 +105,6 @@ const SignUp = () =>{
             </div>
 
           </form>
-        </div>
       </div>
     </div>
   

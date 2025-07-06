@@ -1,4 +1,4 @@
-import { useState,   useContext } from 'react';
+import { useState,   useContext , useEffect } from 'react';
 import axios from 'axios';
 import { Autetificacion } from '../contexts/Conectar.Login';
 import { IconPlus , IconTableDown, IconCopyMinus } from '@tabler/icons-react';
@@ -10,8 +10,11 @@ export default function ListaParaLiquidar({ producto, articulo }) {
     const [manejarError , setError] = useState('')
     const [productos, setProductos] = useState([]);
     const { nota } = articulo
-    const [historial , setHistorial] = useState({})
-        console.log(productos)
+    const [historial , setHistorial] = useState( 
+        {empleado: userON ,
+        liquidado: productos,
+        nota: nota})
+        console.log(userON)
     
        const agregar = ()=>{
             if (producto && producto.name && producto.sacarDeStock && producto._id !== undefined) {
@@ -22,9 +25,18 @@ export default function ListaParaLiquidar({ producto, articulo }) {
                     }
                     return prev;
                 });
-            }
-       }
+            }}
 
+// 👇 Este useEffect mantiene actualizado el historial
+
+
+useEffect(() => {
+    setHistorial({
+        empleado: userON,
+        liquidado: productos,
+        nota: nota
+    });
+}, [productos, userON, nota]);
 
 
     const handleEliminar = (e)=>{
@@ -81,18 +93,21 @@ export default function ListaParaLiquidar({ producto, articulo }) {
     }
   }
     const handleEnviar = () => {
+
+
         productos.map(Element =>(
-            sacarListaDeProductos(Element._id , Element.sacarDeStock
+            
+        sacarListaDeProductos(Element._id , Element.sacarDeStock
         )))
         setActualizar(producto)
-        setHistorial({ 
-            empleado: userON ,
-            liquidado: productos,
-            nota: nota
-        })
+
         historialLiquidacion()
+
         setProductos([])
+
     };
+
+
 
     return (
         <div className="style-form border-color mt-6 style-barra text-[18px] font-bold flex flex-col gap-5 relative">
@@ -100,7 +115,7 @@ export default function ListaParaLiquidar({ producto, articulo }) {
             <h2 className='text-red-400 absolute z-20 top-11 '>{manejarError}</h2>
             <h2 className='color-primario text-[24px]'>Lista para Liquidar</h2>
             
-            {productos.length === 0 ? (
+            {productos.length === 0 && !exito ? (
                 <p className=' text-red-400'>No hay productos agregados</p>
             ) : (
                <ul>

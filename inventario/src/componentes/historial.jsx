@@ -23,7 +23,8 @@ export default function Historial (){
    }, [actualizar])
 
     return(
-        <div className='animacion'>
+        <div className='animacion mb-12'>
+            <h2 className='text-center mt-7 text-4xl font-extrabold color-secundario text-shadow-2xs text-shadow-black'>Hitorial de productos liquidados</h2>
         <ul className="grid grid-cols-1 style-barra md:w-[600px] xl:w-fit h-[700px] w-[90%] overflow-auto Modo-Dark shadow-xl/30 aparecer mt-10 items-start ">
             <li className='grid sm:grid-cols-4 border-b-2 text-[22px] h-12 color-primario font-bold'>
                 <p className='flex items-center sm:justify-center'>Empleado</p>
@@ -34,9 +35,11 @@ export default function Historial (){
               { data.map((element, index) =>(
               <li key={index} className={
                 `grid sm:grid-cols-4 border-b-2 
-                 border-white hover:cursor-pointer 
+                 dark:border-white hover:cursor-pointer 
                 shadow-2xs w-350 
-                 md:text-center p-3`} >
+                 md:text-center p-3
+                 border-[#121212]
+                 `} >
                     <p className='flex items-center sm:justify-center text-[18px] font-bold '>{element.empleado}</p>
                     <ul>
                     {element.liquidado.map((elemento, index) =>(

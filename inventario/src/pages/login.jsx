@@ -30,8 +30,8 @@ const Login = () => {
  
     }catch(error){
         console.error('Error al hacer login' , error.message);
-        setTimeout(() => setError(''), 1000);
-        setError('!Error al Registrarse!')
+        // setTimeout(() => setError(''), 3000);
+        setError('!Error de usuario o contraseña!')
     }
  }
 
@@ -46,8 +46,7 @@ const Login = () => {
       <BgHome/>
 
       <div className=' flex sm:items-center justify-center h-dvh relative'>
-        <div className='border-color m-12 p-3 rounded-2xl h-fit z-20 shadow-xl/50'>
-          <form className="style-form h-fit  w-[400px] sm:h-[300px] sm:w-[500px]" onSubmit={hacerLogin}>
+          <form className="style-form h-fit shadow-[0_35px_35px_rgba(0,0,0,0.25)] border-color w-[400px] sm:h-[300px] sm:w-[500px]" onSubmit={hacerLogin}>
             <div className='flex justify-between'>
               <h2 className="text-xl font-bold mb-4">Login</h2>
               <h2 className='text-red-600 text-20 z-20 top-11 '>{manejarError}</h2>
@@ -100,7 +99,7 @@ const Login = () => {
               </button>
             </div>
           </form>
-        </div>
+        
       </div>
     </div>
   );

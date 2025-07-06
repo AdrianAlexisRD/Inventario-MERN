@@ -16,7 +16,7 @@ const {  updated_id ,  setUpdated_id , setUpdated_name,  setValorSctock } = useC
 
   return(
     // <IconBox stroke={2} className='overflow-visible'/>
-    <ul className="grid grid-cols-1  justify-center style-barra md:w-[700px] xl:w-fit h-[800px] w-[90%] overflow-auto Modo-Dark mb-7 shadow-xl/30 aparecer ">
+    <ul className="grid grid-cols-1 justify-center style-barra md:w-[700px] xl:w-fit h-[800px] w-[90%] overflow-auto Modo-Dark mb-7 shadow-xl/30 aparecer items-start ">
       <li className='grid sm:grid-cols-7 border-b-2 text-[20px]  h-fit p-2 color-primario font-bold'>
         <p className='flex items-center justify-center gap-2'>Nombre Producto </p>
         <p className='flex items-center sm:justify-center'>Stock</p>

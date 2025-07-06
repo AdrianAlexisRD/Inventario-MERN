@@ -58,14 +58,14 @@ const handleSubmit = async (e) => {
   return (
     <div className="flex justify-center flex-col md:flex-row animacion">
 
-    <div className="flex justify-center h-fit relative md:pl-10">
+    <div className="flex justify-center h-fit relative ">
       <div className="h-[15px] text-[18px] absolute top-25 ">
         <h2 className="text-green-500 ">{creado}</h2>
         <h2 className="text-red-500 ">{mostrarError}</h2>
       </div>
 
  
-      <form  className="style-form style-barra border-2 border-[#1e3a8a] mt-8 " onSubmit={handleSubmit}>
+      <form  className="style-form style-barra border-2 border-[#1e3a8a] mt-5 " onSubmit={handleSubmit}>
         <h2 className="text-[26px] font-extrabold mb-10 color-secundario ">Crear producto</h2>
 
         <label htmlFor='name' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">

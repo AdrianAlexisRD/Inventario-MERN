@@ -13,7 +13,8 @@ export default function BtnDelete({ id }) {
 
 
   const borraArticulo = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
+    setBtnBorrar(false) 
     setIsLoading(true);
     
     try {
@@ -34,13 +35,18 @@ export default function BtnDelete({ id }) {
   return (
     <div className="flex justify-center  ">
       {btnBorrar&&
-      <div className='absolute left-[40%] dark:bg-[#121212]/80 bg-[#ffffff]/80 w-[300px] h-20 z-50 rounded-2xl flex justify-center items-center gap-2 border-color'>
-        <button onClick={borraArticulo} className='bg-green-400 hover:bg-green-500 text-2xl rounded-2xl p-1 h-fit'>
+      <div className='absolute left-[40%] dark:bg-[#121212] font-extrabold p-4 bg-[#ffffff] w-fit h-fit  z-50 rounded-2xl flex justify-center flex-col gap-2 border-color'>
+        <h2 className='text-[#1E3A8A] text-[20px]'>seguro que desear borrar este elemento</h2>
+
+        <div className='flex justify-center items-center gap-3'>
+          <button onClick={borraArticulo} className='bg-green-400 hover:bg-green-500 text-[18px] rounded-2xl p-1 h-fit'>
           confirmar
         </button>
-        <button onClick={()=>setBtnBorrar(false)} className='bg-red-400 hover:bg-red-500 text-2xl rounded-2xl p-1 h-fit'>
+        <button onClick={()=>setBtnBorrar(false)} className='bg-red-400 hover:bg-red-500 text-[18px] rounded-2xl p-1 h-fit'>
           cancelar
         </button>
+        </div>
+
       </div>}
       {info &&  (<h3 className='text-red-500' >{info}</h3>)}
       { (tipoAcceso === 'supervisor' && !btnBorrar) &&
