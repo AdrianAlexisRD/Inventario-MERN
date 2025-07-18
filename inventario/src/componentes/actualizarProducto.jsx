@@ -57,14 +57,13 @@ const handleChange = (e) => {
           setArticulo(
           { name: '', price: '', description: '', category: '', stock: '', empleado: tipoAcceso }
           )
-          setTimeout(() => setExito(''), 1000);
+          setTimeout(() => setExito(''), 3000);
           setExito('!Se Actualizo correctamente!')
           }
 
       }catch(error){
         console.log(error)
-          setTimeout(() => setError(''), 1000);
-          setError('!Error al actualizar!')
+          setError( error + '!Error al actualizar!')
         
       }
   }
@@ -72,7 +71,6 @@ const handleChange = (e) => {
 
   return(
     <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion">
-
 
         <form  className="style-form  border-color relative md:h-fit  md:w-[400px] w-[80%] mt-5 " onSubmit={handleSubmit}>
           <h2 className="text-xl font-extrabold mb-6 color-primario">Actualizar Articulo</h2>

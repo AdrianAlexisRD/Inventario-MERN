@@ -49,7 +49,7 @@ const handleChange = (e) => {
   
 
   return(
-    <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion  ">
+    <div className="flex justify-center flex-col md:flex-row items-center md:items-start animacion md:ml-14 ">
 
       <div className=' w-[80%]  rounded md:w-[400px] p-1  mt-5 h-fit '>
         <form  className="style-form style-barra  md:h-fit border-color shadow-xl/50 " onSubmit={handleSubmit}>
@@ -92,7 +92,7 @@ const handleChange = (e) => {
         </form>
         <ListaParaLiquidar producto={ {name:updated_name , _id: updated_id , sacarDeStock: stock }} articulo={articulo} />
     </div>
-    <div className='md:w-[65%]'>
+    <div className='md:w-[75%]'>
       <Mostrar />
     </div>
     

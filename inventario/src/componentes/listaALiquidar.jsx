@@ -16,18 +16,16 @@ export default function ListaParaLiquidar({ producto, articulo }) {
         nota: nota})
         console.log(userON)
     
-       const agregar = ()=>{
-            if (producto && producto.name && producto.sacarDeStock && producto._id !== undefined) {
-                setProductos(prev => {         
-                    const existe = prev.some(p => p.name === producto.name);       
-                    if (!existe) {
-                        return [...prev, producto];
-                    }
-                    return prev;
-                });
-            }}
-
-// 👇 Este useEffect mantiene actualizado el historial
+    const agregar = ()=>{
+        if (producto && producto.name && producto.sacarDeStock && producto._id !== undefined) {
+            setProductos(prev => {         
+                const existe = prev.some(p => p.name === producto.name);       
+                if (!existe) {
+                    return [...prev, producto];
+                }
+                return prev;
+            });
+    }}
 
 
 useEffect(() => {
@@ -41,9 +39,7 @@ useEffect(() => {
 
     const handleEliminar = (e)=>{
         console.log(e.currentTarget.dataset.id)
-        console.log(producto._id)
         const borrar = productos.filter(producto => producto._id !== e.currentTarget.dataset.id )
-        console.log(borrar)
         setProductos(borrar)
     }
 
@@ -54,26 +50,20 @@ useEffect(() => {
         const resProduct = await axios.patch(`http://localhost:5002/api/${id}`,
             {sacarDeStock: sacarDeStock}
         )
-        // console.log(historial)
-        // const resLiquidar = await axios.post(`http://localhost:5002/api/liquidar`,
-        //     historial
-        // )
         setActualizar(articulo)
         if(resProduct.status === 200){
         console.log('se actualizo correctamente')
-        setTimeout(() => setExito(''), 1000);
-        setExito('!Se Actualizo correctamente!')
+        setExito('!Se Liquido correctamente!')
+        historialLiquidacion()
+
         }
         }catch(e){
-            console.log(e)
-            setTimeout(() => setError(''), 1000);
-            setError('!Error al actualizar!')
+            console.log(e.response.data.error)
+            setError(e.response.data.error)
         }
-  }
+  };
     
   const historialLiquidacion =  async () =>{
-    console.log(articulo )
-
     try{
         const res = await axios.post(`http://localhost:5002/api/liquidar`,
          historial
@@ -83,26 +73,18 @@ useEffect(() => {
         if (res.status === 200) {
         setActualizar(articulo)
         
-        setTimeout(() => setExito(''), 1000);
-        setExito('!Se Actualizo correctamente!')
+        setExito('!Se Liquido correctamente!')
         }
-    }catch(error){
-      console.log( error)
-        setTimeout(() => setError(''), 1000);
-        setError('!Error al actualizar!')
+    }catch(e){
+        setError( e + '!Error al actualizar!')
     }
   }
     const handleEnviar = () => {
-
-
-        productos.map(Element =>(
-            
-        sacarListaDeProductos(Element._id , Element.sacarDeStock
-        )))
+       
+        productos.map(Element =>(    
+        sacarListaDeProductos(Element._id , Element.sacarDeStock)
+    ))
         setActualizar(producto)
-
-        historialLiquidacion()
-
         setProductos([])
 
     };
@@ -111,8 +93,8 @@ useEffect(() => {
 
     return (
         <div className="style-form border-color mt-6 style-barra text-[18px] font-bold flex flex-col gap-5 relative">
-            <h2 className='text-green-400 absolute z-20 top-11 '>{exito}</h2>
-            <h2 className='text-red-400 absolute z-20 top-11 '>{manejarError}</h2>
+          {exito? <h2 className="text-green-500 ">{exito}</h2> : <h2 className="text-red-500 ">{manejarError}</h2>}
+
             <h2 className='color-primario text-[24px]'>Lista para Liquidar</h2>
             
             {productos.length === 0 && !exito ? (

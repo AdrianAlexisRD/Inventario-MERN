@@ -6,13 +6,9 @@ const ProductSchema = new mongoose.Schema({
     type: String ,
     required: true
   },
-  // empleado:{
-  //   type: String ,
-  //   required: true ,
-  //   trim: true
-  // },
   name: {
     type: String,
+    unique: [true, 'Nombre de producto repetido'],
     required: [true, 'El nombre es obligatorio'],
     trim: true,
     maxlength: [100, 'El nombre no puede exceder 100 caracteres']

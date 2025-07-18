@@ -35,7 +35,7 @@ const Componente = () => {
 if(!userON) return <Login/>;
 
     return(
-      <div className='flex flex-col items-center dark:bg-[#3f384c] bg-white h-[100vh] min-h-fit w-[100vw]'>
+      <div className='flex flex-col items-center dark:bg-[#1c2029] bg-white h-[100vh] min-h-fit w-[100vw]'>
           <Header />
           <Barra modificar={mostrarCont} />
           {Componente()}        

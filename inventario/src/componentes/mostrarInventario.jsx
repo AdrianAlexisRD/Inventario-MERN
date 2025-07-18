@@ -6,8 +6,7 @@ import { IconSearch,IconBaselineDensityLarge, IconId} from '@tabler/icons-react'
 import Card from "./mostrarCard";
 import ViewList from "./mostrarLista";
 import ExportarCSV from "./descargarCsv";
-import Historial from "./historial";
-// import LinesChart from "./graficos"
+// import LinesChart from './graficos'
 
 import axios from 'axios';
 
@@ -37,8 +36,8 @@ useEffect(()=>{
     setDatos(res.data)
   } catch (error) {
         console.error('Error:', error.message);
-      }
-}
+  };
+};
 callInventario() 
 
 }, [buscarNombre, buscarPorCategoria, actualizar])
@@ -46,7 +45,7 @@ callInventario()
 
 return (
     
-    <section className="flex flex-col items-center justify-self-center  text-black md:w-[90%] md:max-w-fit w-[90%] animacion pb-12">
+    <section className="flex flex-col items-center justify-self-center   text-black md:w-[90%] md:max-w-fit w-[90%] animacion pb-12">
         
         <div className="flex flex-wrap justify-center items-center style-barra Modo-Dark gap-5 w-fit  h-fit m-[20px] md:max-w-fit p-5 shadow-xl/30">
           <ExportarCSV datos={datos}/>
@@ -63,10 +62,10 @@ return (
           </div>
         </div>      
           {!datos.length == 0 ? (changeView? <ViewList datos={datos} className/> :<Card datos={datos} />) : <h2 className="dark:text-[#3B82F6] color-primario text-2xl text-center">No hay producto para mostrar</h2>}
-          {/* <LinesChart/> */}
           
+          {/* <LinesChart/> */}
     </section>
-)}
+)};
 
 export default  Mostrar;
 

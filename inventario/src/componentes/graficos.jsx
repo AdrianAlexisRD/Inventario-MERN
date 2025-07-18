@@ -1,66 +1,67 @@
-import { Line } from 'react-chartjs-2';
+import { Bar , Doughnut , Line } from 'react-chartjs-2';
+
 import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    Filler,
+  Chart as ChartJS,
+  BarElement,
+  CategoryScale, 
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
 } from 'chart.js';
 
 ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    Filler
+  BarElement,
+  CategoryScale, 
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
 );
 
-var beneficios = [0, 56, 20, 36, 80, 40, 30, -20, 25, 30, 12, 60];
-var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-var midata = {
-    labels: meses,
-    datasets: [ // Cada una de las líneas del gráfico
-        {
-            label: 'Beneficios',
-            data: beneficios,
-            tension: 0.5,
-            fill : true,
-            borderColor: 'rgb(255, 99, 132)',
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            pointRadius: 5,
-            pointBorderColor: 'rgba(255, 99, 132)',
-            pointBackgroundColor: 'rgba(255, 99, 132)',
-        },
-        {
-            label: 'Otra línea',
-            data: [20, 25, 60, 65, 45, 10, 0, 25, 35, 7, 20, 25]
-        },
-    ],
-};
+import { MostrarContext } from '../contexts/mostrar.producto';
+import { useContext, } from 'react';
 
-var misoptions = {
-    scales : {
-        y : {
-            min : 0
-        },
-        x: {
-            ticks: { color: 'rgb(255, 99, 132)'}
-        }
-    }
-};
+
 
 export default function LinesChart() {
+// const [nombreCate , setNombreCate]= useState([])
+const {categorias} = useContext(MostrarContext)
+
+// useEffect(() => {
+//     console.log(categorias)
+//     setNombreCate(categorias)
+
+//   }
+// }, [categorias])
+
+
     return( 
         // <div>
-            <Line data={midata} options={misoptions}/>
+            <Bar data={
+                {
+                    labels: [ 'categorias 1', 'categoria 2 ', 'categoria 3 ' , 'categoria 4 ', 'categoria 5 '],
+                    datasets:[{
+                        label:'Revenue',
+                        data: [2, 3, 4, 8 , 10 , 15 ,4, 7],
+                        backgroundColor:[
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                             'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)', 
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                        ]
+                    },
+                ]
+                    
+                }
+
+            } />
         // </div>
    
 )

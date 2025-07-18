@@ -32,43 +32,46 @@ const hacerPost = async () =>{
       });
       if(res.status == 201){
         console.log('articulo creado')
-        setTimeout(() => setCreado(''), 2000);
         setCreado('tarea creada exitosamente')
         setActualizar(articulo.name)
       }
   }catch(e){
-    setTimeout(() => setMostrarError(''), 2000);
-    setMostrarError('! Articulo ya creado !')
-    console.log(e)
+    setMostrarError(e.response.data.error)
+    console.log(e.response.data.error)
   }
 
-}
+};
 
 const handleSubmit = async (e) => {
   e.preventDefault();
   hacerPost()
-}
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setArticulo((e) => ({ ...e,[name]: value,}));
+    console.log({ ...e,[name]: value,})
+
+
   };
 
 
   return (
-    <div className="flex justify-center flex-col md:flex-row animacion">
+    <div className="flex justify-center flex-col md:flex-row md:ml-15 animacion">
 
-    <div className="flex justify-center h-fit relative ">
-      <div className="h-[15px] text-[18px] absolute top-25 ">
-        <h2 className="text-green-500 ">{creado}</h2>
-        <h2 className="text-red-500 ">{mostrarError}</h2>
-      </div>
+    <div className="flex justify-center h-fit  ">
+
 
  
-      <form  className="style-form style-barra border-2 border-[#1e3a8a] mt-5 " onSubmit={handleSubmit}>
-        <h2 className="text-[26px] font-extrabold mb-10 color-secundario ">Crear producto</h2>
+      <form  className="style-form style-barra border-2 mt-5 color-primario max-w-120  " onSubmit={handleSubmit}>
+        <h2 className="text-[26px] font-extrabold mb-3 color-secundario ">Crear producto</h2>
+        <div className=" text-[15px] ">
+          {creado? <h2 className="text-green-500 ">{creado}</h2> : <h2 className="text-red-500 ">{mostrarError}</h2>}
+          
+          
+        </div>
 
-        <label htmlFor='name' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
+        <label htmlFor='name' className="block mb-2 dark:text-[#3B82F6] text-shadow-lg/10 font-extrabold">
           Nombre articulo
           <input
             type="text"
@@ -80,7 +83,7 @@ const handleSubmit = async (e) => {
           />
           </label>
 
-          <label htmlFor='price' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
+          <label htmlFor='price' className="block mb-2 dark:text-[#3B82F6] text-shadow-lg/10 font-extrabold">
           price
           <input
             type="number"
@@ -91,7 +94,7 @@ const handleSubmit = async (e) => {
             required
           />
         </label>
-          <label htmlFor='descripcion' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
+          <label htmlFor='descripcion' className="block mb-2 dark:text-[#3B82F6] text-shadow-lg/10 font-extrabold">
           descripcion
           <input
             type="text"
@@ -102,7 +105,7 @@ const handleSubmit = async (e) => {
             required
           />
           </label>
-          <label htmlFor='categoria' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
+          <label htmlFor='categoria' className="block mb-2 dark:text-[#3B82F6] text-shadow-lg/10 font-extrabold">
               Categoria
               <input
                 type='text'
@@ -113,7 +116,7 @@ const handleSubmit = async (e) => {
               />
               </label>
       
-          <label htmlFor='stock' className="block mb-2 color-primario text-shadow-lg/10 font-extrabold">
+          <label htmlFor='stock' className="block mb-2 dark:text-[#3B82F6] text-shadow-lg/10 font-extrabold">
           Cantidad
           <input
             type="number"
@@ -133,8 +136,8 @@ const handleSubmit = async (e) => {
         </div>
       </form>
     </div>
-      <div className="md:w-[65%]">
-        <Mostrar />
+      <div className="md:w-[75%]">
+        <Mostrar /> 
       </div>
       </div>
   )

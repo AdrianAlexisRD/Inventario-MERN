@@ -2,19 +2,19 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-.bg-li{ @apply bg-[#121212] }
+.bg-li{ @apply bg-[#030712] }
 
-.style-li-home{ @apply flex dark:text-white  md:text-[38px] gap-4 text-[15px] }
+.style-li-home{ @apply flex dark:text-white  md:text-[30px] gap-4 text-[15px] }
 
-.style-input{ @apply w-full p-2 border-2 rounded mt-1 focus:bg-white focus:text-black  border-[#1E3A8A] }
+.style-input{ @apply w-full p-2 border-2 rounded mt-1 focus:bg-white focus:text-[#030712]  border-[#1E3A8A] }
 
 .style-btn{ @apply bg-[#1E3A8A] text-white px-4 py-2 rounded hover:bg-[#3B82F6] active:scale-90 }
 
-.style-form{ @apply p-4 dark:bg-[#121212] bg-[#ffffff] text-black dark:text-white rounded-2xl }
+.style-form{ @apply p-4 dark:bg-[#030712] bg-[#ffffff] text-[#030712] dark:text-white rounded-2xl }
 
-.btn-barra{ @apply flex gap-2 items-center rounded p-1 text-[#3B82F6] hover:bg-[#121212] hover:text-white dark:hover:text-[#121212]  dark:hover:bg-white  active:scale-[0.95] }
+.btn-barra{ @apply flex gap-2 items-center rounded p-1 text-[#3B82F6] hover:bg-[#030712] hover:text-white dark:hover:text-[#030712]  dark:hover:bg-white  active:scale-[0.95] }
 
-.style-barra{ @apply  rounded-2xl shadow-[0_35px_35px_rgba(0,0,0,0.25)] border-[#1E3A8A] border-2 }
+.style-barra{ @apply  rounded shadow-[0_35px_35px_rgba(0,0,0,0.25)] border-[#1E3A8A] border-2 }
 
 .barra{ @apply md:h-[100%] md:mt-0 mt-[100px] flex md:flex-col gap-4 p-2 md:p-0 md:pt-4 md:absolute md:left-0 md:top-[90px]}
 
@@ -28,11 +28,11 @@
 
 .border-color{@apply border-[#1E3A8A] border-2}
 
-.Modo-Dark{ @apply dark:bg-[#121212] bg-[#ffffff] text-black dark:text-white }
+.Modo-Dark{ @apply dark:bg-[#030712] bg-[#ffffff] text-black dark:text-white }
 
-.icon-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3 }
+.icon-card{ @apply bg-white dark:bg-[#030712] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3 }
 
-.style-card{ @apply bg-white dark:bg-[#121212] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3}
+.style-card{ @apply bg-white dark:bg-[#1c2029] w-[100%] h-[100px] border-b-2 border-[#1E3A8A] rounded-2xl p-3}
 
 .text-barra{@apply overflow-hidden  }
 *{
@@ -70,8 +70,5 @@
 
 }
 
-@keyframes girarLOGO {
-  from{}
-}
 
 

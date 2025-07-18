@@ -19,15 +19,13 @@ exports.getProducts = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   const {name , empleado} = req.body
-  // if(empleado !== 'supervisor'){
-  //   return res.status(400).json( 'solo supervisores')
-  // }
+
   try {
     const product = new Product(req.body);
-    const repeatProduct = await Product.findOne({ name })
-    if(repeatProduct){
-      return res.status(400).json( 'El producto ya existe para este usuario.');
-    }
+    // const repeatProduct = await Product.findOne({ name })
+    // if(repeatProduct){
+    //   return res.status(400).json( 'El producto ya existe.');
+    // }
     await product.save();
     res.status(201).json(product);
   } catch (error) {
@@ -40,10 +38,7 @@ exports.updateProduct = async (req, res) => {
     const { id } = req.params;
     const { sacarDeStock } = req.body
     console.log(sacarDeStock)
-    console.log(id)
     const nuevoValorStock = await Product.findOne({_id:id})
-
-    console.log(nuevoValorStock.stock)  
 
     let datosAtualizados = req.body 
     if(sacarDeStock){
