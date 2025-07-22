@@ -5,7 +5,7 @@ import { Autetificacion } from '../contexts/Conectar.Login';
 
 
 const SelectCategoria = () =>{
-  const { setNameCate , setCategorias } = useContext(MostrarContext);
+  const { setNameCate } = useContext(MostrarContext);
   const { actualizar } = useContext(Autetificacion);
   const [datos , setDatos] = useState([])
 
@@ -15,7 +15,7 @@ const SelectCategoria = () =>{
   const callInventario = async ()=>{
 
     try {
-      const res = await axios.get(`http://localhost:5002/api`)
+      const res = await axios.get(`http://localhost:5002/api/categorias`)
       console.log(res.data)
       setDatos(res.data)
     } catch (error) {
@@ -30,18 +30,18 @@ const SelectCategoria = () =>{
         setNameCate(valorSelect)
     }
 
-  const  categorias = []
-  datos.map(Element =>{
-    categorias.push(Element.category)
-  });
+  // const  categorias = []
+  // datos.map(Element =>{
+  //   categorias.push(Element.category)
+  // });
 
-  const categoriaFiltrada = [...new Set(categorias)]
-  setCategorias(categoriaFiltrada )
+  // // const categoriaFiltrada = [...new Set(categorias)]
+  // setCategorias(categorias)
 
     return(
     <select onChange={handleSelect} className="w-[200px] text-center h-9 bg-[#3B82F6]/[0.6] rounded font-extrabold border-color shadow-xl dark:ring ">
         <option  value="">Todas</option>
-        {categoriaFiltrada.map((category , index) =>(
+        {datos.map((category , index) =>(
         <option key={index} value={category}>{category}</option> 
         ))}
 

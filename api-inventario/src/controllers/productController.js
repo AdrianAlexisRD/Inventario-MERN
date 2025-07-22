@@ -22,10 +22,7 @@ exports.createProduct = async (req, res) => {
 
   try {
     const product = new Product(req.body);
-    // const repeatProduct = await Product.findOne({ name })
-    // if(repeatProduct){
-    //   return res.status(400).json( 'El producto ya existe.');
-    // }
+
     await product.save();
     res.status(201).json(product);
   } catch (error) {
@@ -67,6 +64,16 @@ exports.deleteProduct = async (req, res) => {
       return res.status(404).json({ error: 'Producto no encontrado' });
     }
     res.status(200).json({ message: 'Producto eliminado correctamente' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.obtenerCategorias = async (req, res) => {
+  try {
+    const categories = await Product.distinct('category');
+    console.log(categories)
+    res.json(categories);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

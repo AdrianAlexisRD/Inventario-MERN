@@ -5,16 +5,29 @@ const {
   getProducts,
   createProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
+  obtenerCategorias
 } = require('../controllers/productController');
-const { liquidarProduct , historialProduct } =  require('../controllers/liquidacionController')
 
-router.route('/').get(getProducts)
-router.route('/').post(createProduct);
-router.route('/:id').patch(updateProduct)
-router.route('/:id').delete(deleteProduct);
-router.route('/liquidar').post(liquidarProduct)
-router.route('/liquidar').get(historialProduct)
+const { 
+  liquidarProduct, 
+  historialProduct 
+} =  require('../controllers/liquidacionController')
+
+router.route('/')
+  .get(getProducts)
+  .post(createProduct);
+
+router.route('/categorias')
+  .get(obtenerCategorias);
+
+router.route('/:id')
+  .patch(updateProduct)
+  .delete(deleteProduct);
+
+router.route('/liquidar')
+  .post(liquidarProduct)
+  .get(historialProduct);
 
 
 
