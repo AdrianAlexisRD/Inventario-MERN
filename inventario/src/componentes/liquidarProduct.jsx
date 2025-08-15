@@ -53,7 +53,7 @@ const handleChange = (e) => {
 
       <div className=' w-[80%]  rounded md:w-[400px] p-1  mt-5 h-fit '>
         <form  className="style-form style-barra  md:h-fit border-color shadow-xl/50 " onSubmit={handleSubmit}>
-          <h2 className="text-xl font-extrabold mb-6 color-primario">Liquidar Producto</h2>
+          <h2 className="text-[26px] font-extrabold mb-3 color-secundario">Liquidar Producto</h2>
 
           <label htmlFor='name' className="block mb-2 color-secundario text-shadow-lg/10 font-extrabold">
             Nombre articulo

@@ -1,18 +1,18 @@
-const express = require('express');
-const router = express.Router();
-
-const {
+import express from 'express';
+import {
   getProducts,
   createProduct,
   updateProduct,
   deleteProduct,
   obtenerCategorias
-} = require('../controllers/productController');
+} from '../controllers/productController.js';
 
-const { 
-  liquidarProduct, 
-  historialProduct 
-} =  require('../controllers/liquidacionController')
+import {
+  liquidarProduct,
+  historialProduct
+} from '../controllers/liquidacionController.js';
+
+const router = express.Router();
 
 router.route('/')
   .get(getProducts)
@@ -29,6 +29,4 @@ router.route('/liquidar')
   .post(liquidarProduct)
   .get(historialProduct);
 
-
-
-module.exports = router;
+export default router;

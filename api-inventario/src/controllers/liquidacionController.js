@@ -1,9 +1,8 @@
-const Liquidar = require('../models/liquidarProduct');
+import liquidacion from "../models/liquidarProduct.js";
 
-exports.liquidarProduct = async (req, res) => {
-  console.log(req.body)
+export const liquidarProduct = async (req, res) => {
   try {
-    const liquidar = new Liquidar(req.body);
+    const liquidar = new liquidacion(req.body);
 
     await liquidar.save();
     res.status(200).json(liquidar);
@@ -12,15 +11,12 @@ exports.liquidarProduct = async (req, res) => {
   }
 };
 
-exports.historialProduct = async (req, res) =>{
-  console.log(req.body)
-  try{
-        const historialLiquidados= await Liquidar.find();
-        res.status(200).json(historialLiquidados);
-
-  }catch(e){
-    console.log(e)
+export const historialProduct = async (req, res) => {
+  try {
+    const historialLiquidados = await liquidacion.find();
+    res.status(200).json(historialLiquidados);
+  } catch (e) {
+    console.log(e);
     res.status(400).json({ e: e.message });
-
   }
-}
+};
