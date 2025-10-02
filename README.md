@@ -1,6 +1,3 @@
-¡Claro! Aquí tienes un ejemplo de README.md para tu repositorio Inventario-MERN. Puedes personalizarlo según tus necesidades.
-
----
 
 # Inventario-MERN
 
